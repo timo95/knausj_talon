@@ -197,6 +197,7 @@ symbol_key_words = {
     "pipe": "|",
     "dubquote": '"',
     "double quote": '"',
+	"degree": "°",
 }
 
 # make punctuation words also included in {user.symbol_keys}
@@ -221,14 +222,17 @@ simple_keys = [
     "pageup",
     "space",
     "tab",
+	"delete",
+	"backspace",
 ]
 
 alternate_keys = {
-    "delete": "backspace",
-    "forward delete": "delete",
+    #"delete": "backspace",
+    #"forward delete": "delete",
     #'junk': 'backspace',
     "page up": "pageup",
     "page down": "pagedown",
+	"start": "super",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
