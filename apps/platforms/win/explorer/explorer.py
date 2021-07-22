@@ -9,9 +9,9 @@ apps.windows_explorer = """
 os: windows
 and app.name: Windows Explorer
 os: windows
-and app.exe: explorer.exe
+and app.name: Windows-Explorer
 os: windows
-and app.exe: Explorer.EXE
+and app.exe: explorer.exe
 """
 
 # many commands should work in most save/open dialog.
@@ -87,7 +87,16 @@ if app.platform == "windows":
 
 
 @ctx.action_class("user")
-class user_actions:
+class UserActions:
+    def file_manager_go_back():
+        actions.key("alt-left")
+
+    def file_manager_go_forward():
+        actions.key("alt-right")
+
+    def file_manager_open_parent():
+        actions.key("alt-up")
+
     def file_manager_current_path():
         path = ui.active_window().title
 
