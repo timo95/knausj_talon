@@ -4,6 +4,8 @@ ctx.matches = r"""
 app: windows_command_processor
 app: windows_terminal
 and win.title: /Command Prompt/
+app: windows_terminal
+and win.title: /Eingabeaufforderung/
 """
 ctx.tags = ['user.file_manager', 'user.generic_terminal', 'user.git', 'user.kubectl', 'terminal']
 
