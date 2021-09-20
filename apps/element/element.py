@@ -5,7 +5,6 @@ mod = Module()
 apps = mod.apps
 apps.slack = "app.name: Element"
 mod.apps.slack = """
-os: windows
 and app.name: Element
 os: windows
 and app.exe: Element.exe
