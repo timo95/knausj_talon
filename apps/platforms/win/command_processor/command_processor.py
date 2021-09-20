@@ -5,8 +5,10 @@ import os
 ctx = Context()
 ctx.matches = r"""
 app: windows_command_processor
-app: windows_terminal 
+app: windows_terminal
 and win.title: /Command Prompt/
+app: windows_terminal
+and win.title: /Eingabeaufforderung/
 """
 
 user_path = os.path.expanduser("~")
