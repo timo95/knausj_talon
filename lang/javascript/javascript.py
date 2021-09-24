@@ -76,6 +76,9 @@ class UserActions:
     def code_type_class():
         actions.auto_insert("class ")
 
+    def code_comment():
+        actions.insert("// ")
+
     def code_include():
         actions.auto_insert("")
 

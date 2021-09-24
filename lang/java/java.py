@@ -164,3 +164,6 @@ class UserActions:
 
     def code_state_return():
         actions.insert("return ")
+
+    def code_comment():
+        actions.insert("// ")
