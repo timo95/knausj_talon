@@ -122,13 +122,15 @@ class Actions:
 
     def file_manager_open_parent():
         """file_manager_open_parent"""
-        return
+        actions.key("alt-up")
 
     def file_manager_go_forward():
         """file_manager_go_forward_directory"""
+        actions.key("alt-right")
 
     def file_manager_go_back():
         """file_manager_go_forward_directory"""
+        actions.key("alt-left")
 
     def file_manager_open_volume(volume: str):
         """file_manager_open_volume"""
@@ -144,6 +146,7 @@ class Actions:
 
     def file_manager_show_properties():
         """Shows the properties for the file"""
+        actions.key("alt-enter")
 
     def file_manager_terminal_here():
         """Opens terminal at current location"""
