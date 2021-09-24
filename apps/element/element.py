@@ -3,8 +3,8 @@ from talon import Context, Module, actions
 ctx = Context()
 mod = Module()
 apps = mod.apps
-apps.slack = "app.name: Element"
-mod.apps.slack = """
+apps.element = "app.name: Element"
+mod.apps.element = """
 and app.name: Element
 os: windows
 and app.exe: Element.exe
