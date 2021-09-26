@@ -5,7 +5,7 @@ mod = Module()
 apps = mod.apps
 apps.element = "app.name: Element"
 mod.apps.element = """
-and app.name: Element
+app.name: Element
 os: windows
 and app.exe: Element.exe
 """
