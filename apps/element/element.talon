@@ -2,6 +2,8 @@ app: element
 -
 tag(): user.messaging
 
+# Spaces
+(workspace | space) <number_small>: key("ctrl-{number}")
 # Messaging
 grab left: key(shift-up)
 grab right: key(shift-down)
