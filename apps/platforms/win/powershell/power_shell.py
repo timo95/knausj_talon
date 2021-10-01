@@ -11,7 +11,7 @@ and win.title: /PowerShell/
 directories_to_remap = {}
 directories_to_exclude = {}
 
-ctx.tags = ['user.file_manager', 'user.generic_terminal', 'user.git', 'user.kubectl', 'user.anaconda', 'terminal', 'generic_windows_shell']
+ctx.tags = ['user.file_manager', 'user.generic_terminal', 'user.git', 'user.kubectl', 'user.anaconda', 'user.docker', 'terminal', 'generic_windows_shell']
 
 @ctx.action_class('edit')
 class EditActions:
