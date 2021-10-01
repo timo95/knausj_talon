@@ -167,3 +167,7 @@ class UserActions:
 
     def code_comment():
         actions.insert("// ")
+
+    def code_document_string():
+        actions.insert('/**')
+        actions.key("enter")
