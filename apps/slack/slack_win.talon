@@ -5,7 +5,7 @@ app: slack
 -
 tag(): user.messaging
 # Workspaces
-workspace <number_small>: key("ctrl-{number}")
+workspace <number_small>: key("ctrl-{number_small}")
 # Channel
 (slack | lack) [channel] info: key(ctrl-shift-i)
 # Navigation
