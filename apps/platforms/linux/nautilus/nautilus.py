@@ -1,4 +1,4 @@
-from talon import Context, Module, actions
+from talon import ui, clip, Context, Module, actions
 
 ctx = Context()
 mod = Module()
@@ -38,3 +38,8 @@ class UserActions:
         actions.key("ctrl-shift-n")
         if name:
             actions.insert(name)
+
+    def file_manager_terminal_here():
+        actions.key("ctrl-l")
+        actions.key("ctrl-c")
+        ui.launch(path="gnome-terminal", args=["--working-directory={}".format(clip.get())])
