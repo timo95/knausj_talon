@@ -36,3 +36,13 @@ class AppActions:
         #requires easy window switcher or equivalent (built into most Linux)
     def window_previous():
         actions.key('alt-shift-`')
+
+
+@ctx.action_class('user')
+class UserActions:
+    def window_maximize():
+        actions.key('super-up')
+    def window_restore():
+        actions.key('super-down')
+    def window_menu():
+        actions.key('alt-space')
