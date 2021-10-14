@@ -44,3 +44,18 @@ class EditActions:
         actions.key('ctrl-shift-f')
         if str:
             actions.insert(text)
+    def delete_line():
+        actions.edit.line_start()
+        actions.key('ctrl-k')
+    def extend_left():
+        pass
+    def extend_right():
+        pass
+    def extend_up():
+        pass
+    def extend_down():
+        pass
+    def extend_word_left():
+        pass
+    def extend_word_right():
+        pass
