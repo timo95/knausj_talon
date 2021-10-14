@@ -41,6 +41,6 @@ class UserActions:
 
     def file_manager_terminal_here():
         actions.key("ctrl-l")
-        with clip.capture() as s:
+        with clip.capture() as path:
             actions.edit.copy()
-        ui.launch(path="gnome-terminal", args=["--working-directory={}".format(s.get())])
+        ui.launch(path="gnome-terminal", args=["--working-directory={}".format(path.get())])
