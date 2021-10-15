@@ -36,6 +36,7 @@ class app_actions:
     def tab_close(): actions.key("ctrl-shift-w")
     # global (overwrite linux/app.py)
     def window_open(): actions.key('ctrl-shift-n')
+    def window_close(): actions.key('ctrl-shift-q')
 
 
 # global (overwrite linux/edit.py)
