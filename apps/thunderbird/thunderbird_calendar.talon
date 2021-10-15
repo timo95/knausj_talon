@@ -27,7 +27,7 @@ title: /Dezember /
 -
 event new: key(ctrl-i)
 task new: key(ctrl-d)
-(toggle | show) today: key(f11)
+toggle today: key(f11)
 view day: key(ctrl-1)
 view week: key(ctrl-2)
 view multi [week]: key(ctrl-3)
