@@ -1,8 +1,29 @@
 app: thunderbird
 os: windows
 os: linux
-title: /Calendar/
-title: /Kalender/
+title: /^Calendar /
+title: /January /
+title: /February /
+title: /March /
+title: /April /
+title: /May /
+title: /June /
+title: /July /
+title: /August /
+title: /September /
+title: /October /
+title: /November /
+title: /December /
+# German (duplicates removed)
+title: /^Kalender /
+title: /Januar /
+title: /Februar /
+title: /März /
+title: /Mai /
+title: /Juni /
+title: /Juli /
+title: /Oktober /
+title: /Dezember /
 -
 event new: key(ctrl-i)
 task new: key(ctrl-d)
