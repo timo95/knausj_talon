@@ -1,7 +1,7 @@
 app: thunderbird
 os: windows
 os: linux
-title: /^Calendar /
+title: Calendar - Mozilla Thunderbird
 title: /January /
 title: /February /
 title: /March /
@@ -15,7 +15,7 @@ title: /October /
 title: /November /
 title: /December /
 # German (duplicates removed)
-title: /^Kalender /
+title: Kalender - Mozilla Thunderbird
 title: /Januar /
 title: /Februar /
 title: /März /
