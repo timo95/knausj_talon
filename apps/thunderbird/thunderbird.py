@@ -26,7 +26,7 @@ class AppActions:
 
 @ctx.action_class("user")
 class UserActions:
-    # app.tabs
+    # user.tabs
     def tab_jump(number: int):
         if number <= 9:
             actions.key("alt-{}".format(number))
