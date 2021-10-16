@@ -1,4 +1,5 @@
 app: thunderbird
+# English
 title: Calendar - Mozilla Thunderbird
 title: /January /
 title: /February /
@@ -23,9 +24,11 @@ title: /Juli /
 title: /Oktober /
 title: /Dezember /
 -
+# event/task
 event new: key(ctrl-i)
 task new: key(ctrl-d)
 (task | event) delete: key(delete)
+# layout
 toggle today: key(f11)
 view <number_small>: user.thunderbird_calendar_view(number_small)
 view day: user.thunderbird_calendar_view(1)
