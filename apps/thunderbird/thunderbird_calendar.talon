@@ -1,6 +1,4 @@
 app: thunderbird
-os: windows
-os: linux
 title: Calendar - Mozilla Thunderbird
 title: /January /
 title: /February /
@@ -27,8 +25,10 @@ title: /Dezember /
 -
 event new: key(ctrl-i)
 task new: key(ctrl-d)
+(task | event) delete: key(delete)
 toggle today: key(f11)
-view day: key(ctrl-1)
-view week: key(ctrl-2)
-view multi [week]: key(ctrl-3)
-view month: key(ctrl-4)
+view <number_small>: user.thunderbird_calendar_view(number_small)
+view day: user.thunderbird_calendar_view(1)
+view week: user.thunderbird_calendar_view(2)
+view multi [week]: user.thunderbird_calendar_view(3)
+view month: user.thunderbird_calendar_view(4)

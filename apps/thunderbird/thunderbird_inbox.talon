@@ -1,6 +1,4 @@
 app: thunderbird
-os: windows
-os: linux
 title: /^Inbox -/
 # German
 title: /^Posteingang -/

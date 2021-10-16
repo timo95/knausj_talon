@@ -16,18 +16,16 @@ app: thunderbird
 ctx.tags = ["user.tabs"]
 
 
+# --- Define actions ---
+@mod.action_class
+class UserActions:
+    def thunderbird_calendar_view(number: int):
+        """Select between calendar view tabs"""
+
+
 # --- Implement actions ---
 @ctx.action_class('app')
 class AppActions:
     # app.tabs
-    # doesn't exist
+    # not possible in thunderbird
     def tab_open(): pass
-
-
-@ctx.action_class("user")
-class UserActions:
-    # user.tabs
-    def tab_jump(number: int):
-        if number <= 9:
-            actions.key("alt-{}".format(number))
-    def tab_final(): actions.key("alt-9")
