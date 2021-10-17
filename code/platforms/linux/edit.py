@@ -123,7 +123,11 @@ class EditActions:
         #action(edit.select_paragraph):
         #action(edit.select_sentence):
     def select_word():
-        actions.edit.right()
+        actions.edit.extend_right()
+        after = actions.edit.selected_text()
+        actions.edit.extend_left()
+        if after.isalnum():
+            actions.edit.right()
         actions.edit.word_left()
         actions.edit.extend_word_right()
     def undo():

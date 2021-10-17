@@ -23,6 +23,8 @@ ctx.tags = ['user.find_and_replace', 'user.line_commands', 'user.tabs']
 
 @ctx.action_class('app')
 class AppActions:
+    def tab_open():
+        actions.key('ctrl-n')
     def tab_previous():
         actions.key('ctrl-pageup')
     def tab_next():
