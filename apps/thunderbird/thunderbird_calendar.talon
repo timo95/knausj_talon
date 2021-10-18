@@ -1,28 +1,4 @@
-app: thunderbird
-# English
-title: Calendar - Mozilla Thunderbird
-title: /January /
-title: /February /
-title: /March /
-title: /April /
-title: /May /
-title: /June /
-title: /July /
-title: /August /
-title: /September /
-title: /October /
-title: /November /
-title: /December /
-# German (duplicates removed)
-title: Kalender - Mozilla Thunderbird
-title: /Januar /
-title: /Februar /
-title: /März /
-title: /Mai /
-title: /Juni /
-title: /Juli /
-title: /Oktober /
-title: /Dezember /
+app: thunderbird_calendar
 -
 # event/task
 event new: key("{user.mod()}-i")

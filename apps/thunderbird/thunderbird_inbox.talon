@@ -1,11 +1,4 @@
-app: thunderbird
-# English
-title: /^Inbox -/
-# German
-title: /^Posteingang -/
-title: /^Entwürfe -/
-title: /^Papierkorb -/
-title: /^Gesendet -/
+app: thunderbird_inbox
 -
 # navigate
 (mail | message) open: key(enter)

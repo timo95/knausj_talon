@@ -1,8 +1,4 @@
-app: thunderbird
-# English
-title: Address Book
-# German
-title: Adressbuch
+app: thunderbird_contacts
 -
 contact new: key("{user.mod()}-n")
 contact edit: key("{user.mod()}-i")
