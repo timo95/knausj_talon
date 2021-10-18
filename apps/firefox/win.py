@@ -17,9 +17,9 @@ class BrowserActions:
     def bookmark_tabs():
         actions.key('ctrl-shift-d')
     def bookmarks():
-        actions.key('ctrl-b')
+        actions.key('ctrl-shift-o')
     def bookmarks_bar():
-        actions.key('ctrl-shift-b')
+        actions.key('ctrl-b')
     def focus_address():
         actions.key('ctrl-l')
         #action(browser.focus_page):
