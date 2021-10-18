@@ -25,8 +25,8 @@ title: /Oktober /
 title: /Dezember /
 -
 # event/task
-event new: key(ctrl-i)
-task new: key(ctrl-d)
+event new: key("{user.mod()}-i")
+task new: key("{user.mod()}-d")
 (task | event) delete: key(delete)
 # layout
 toggle today: key(f11)

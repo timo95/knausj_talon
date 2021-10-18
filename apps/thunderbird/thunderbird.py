@@ -19,6 +19,8 @@ ctx.tags = ["user.tabs"]
 # --- Define actions ---
 @mod.action_class
 class UserActions:
+    def mod():
+        """ctrl or cmd"""
     def thunderbird_calendar_view(number: int):
         """Select between calendar view tabs"""
 

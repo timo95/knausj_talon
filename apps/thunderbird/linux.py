@@ -11,7 +11,7 @@ app: thunderbird
 # --- Implement actions ---
 @ctx.action_class('app')
 class AppActions:
-    def tab_reopen(): actions.key("ctrl-shift-t")  # doesn't work? todo: try alt, only works from inbox tab?
+    def tab_reopen(): actions.key("ctrl-shift-t")  # only works from inbox tab
 
 
 @ctx.action_class("user")
@@ -22,4 +22,5 @@ class UserActions:
             actions.key(f"alt-{number}")
     def tab_final(): actions.key("alt-9")
     # custom actions
+    def mod(): return "ctrl"
     def thunderbird_calendar_view(number: int): actions.key(f"ctrl-{number}")

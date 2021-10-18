@@ -4,10 +4,10 @@ title: Address Book
 # German
 title: Adressbuch
 -
-contact new: key(ctrl-n)
-contact edit: key(ctrl-i)
+contact new: key("{user.mod()}-n")
+contact edit: key("{user.mod()}-i")
 contact delete: key(delete)
-contact print: key(ctrl-p)
-contact message: key(ctrl-m)
+contact print: key("{user.mod()}-p")
+contact message: key("{user.mod()}-m")
 contact up: key(up)
 contact down: key(down)
