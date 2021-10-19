@@ -55,6 +55,7 @@ extension_lang_map = {
     ".sh": "bash",
     ".snippets": "snippets",
     ".talon": "talon",
+    ".tex": "latex",
     ".ts": "typescript",
     ".tsx": "typescript",
     ".vba": "vba",
