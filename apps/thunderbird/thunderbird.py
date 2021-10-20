@@ -1,30 +1,36 @@
 from talon import Module, Context
 
 # --- App definitions ---
-# Main app
+# Main app TODO: mac context
 mod = Module()
 mod.apps.thunderbird = """
-app.name: Thunderbird
+os: linux
+and app.name: Thunderbird
+"""
+mod.apps.thunderbird = """
+os: windows
+and app.name: Thunderbird
+os: windows
+and app.exe: thunderbird.exe
 """
 
-# Inbox tab
+# Inbox tab TODO: also matches emails opened in new tab
 mod.apps.thunderbird_inbox = """
 app: thunderbird
 title: /@/
 """
 
-month_names = [
+# Calendar tab (lightning)
+months = [
     "January", "February", "March", "April", "May", "June",  # English
     "July", "August", "September", "October", "November", "December",
     "Januar", "Februar", "März", "Mai", "Juni", "Juli", "Oktober", "Dezember"  # German
 ]
-month_titles = "\n".join(map(lambda s: f"title: /{s} /", month_names))
-# Calendar tab (lightning)
 mod.apps.thunderbird_calendar = f"""
 app: thunderbird
 title: Calendar - Mozilla Thunderbird
 title: Kalender - Mozilla Thunderbird
-{month_titles}
+title: /({"|".join(map(lambda m: m + " ", months))})/
 """
 
 # Tasks tab TODO: implement

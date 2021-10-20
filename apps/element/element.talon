@@ -11,7 +11,7 @@ grab right: key(shift-down)
 insert command:
     insert("``")
     key(left)
-insert code:
+insert [code] block:
     insert("``````")
     key(left left left)
     key(shift-enter)

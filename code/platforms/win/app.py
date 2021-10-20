@@ -25,14 +25,25 @@ class AppActions:
     def window_close():
         actions.key('alt-f4')
     def window_hide():
-        actions.key('alt-space n')
+        actions.user.window_restore()
+        actions.sleep('100ms')
+        actions.key('super-down')
     def window_hide_others():
-        actions.key('win-d alt-tab')
-        #requires easy window switcher or equivalent (built into most Linux)
+        actions.key('super-home')
     def window_next():
-        actions.key('alt-`')
+        actions.key('alt-escape')
     def window_open():
         actions.key('ctrl-n')
         #requires easy window switcher or equivalent (built into most Linux)
     def window_previous():
-        actions.key('alt-shift-`')
+        actions.key('alt-shift-escape')
+
+
+@ctx.action_class('user')
+class UserActions:
+    def window_maximize():
+        actions.key('super-up')
+    def window_restore():
+        actions.key('super-up super-down')
+    def window_overview():
+        actions.key('super-tab')

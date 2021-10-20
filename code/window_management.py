@@ -11,3 +11,5 @@ class Actions:
         """Restore window to original size"""
     def window_menu():
         """Open menu to manage window"""
+    def window_overview():
+        """Open window overview"""
