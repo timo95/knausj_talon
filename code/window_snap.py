@@ -182,7 +182,7 @@ class Actions:
         _snap_window_helper(ui.active_window(), pos)
 
     def move_window_next_screen() -> None:
-        """Move the active window to a specific screen."""
+        """Move the active window leftward by one."""
         _move_to_screen(ui.active_window(), offset=1)
 
     def move_window_previous_screen() -> None:
@@ -190,7 +190,7 @@ class Actions:
         _move_to_screen(ui.active_window(), offset=-1)
 
     def move_window_to_screen(screen_number: int) -> None:
-        """Move the active window leftward by one."""
+        """Move the active window to a specific screen."""
         _move_to_screen(ui.active_window(), screen_number=screen_number)
 
     def snap_app(app_name: str, pos: RelativeScreenPos):
@@ -207,3 +207,13 @@ class Actions:
         _move_to_screen(
             window, screen_number=screen_number,
         )
+    def window_maximize():
+        """Maximize window to windowed fullscreen"""
+    def window_restore():
+        """Restore fullscreen window to original size"""
+    def window_menu():
+        """Open menu to manage window"""
+    def window_overview():
+        """Open window overview"""
+    def desktop_show():
+        """Minimize all windows"""

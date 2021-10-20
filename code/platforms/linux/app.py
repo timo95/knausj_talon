@@ -48,3 +48,5 @@ class UserActions:
         actions.key('alt-space')
     def window_overview():
         actions.key('super-tab')
+    def desktop_show():
+        actions.key('super-d')

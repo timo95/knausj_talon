@@ -29,11 +29,13 @@ class AppActions:
     def window_hide_others():
         actions.key('super-home')
     def window_next():
-        actions.key('alt-escape')
+        actions.key('alt-escape')  # unordered
+        # actions.key('alt-`')  # requires easy window switcher or equivalent
     def window_open():
         actions.key('ctrl-n')
     def window_previous():
-        actions.key('alt-shift-escape')
+        actions.key('alt-shift-escape')  # unordered
+        # actions.key('alt-shift-`')  # requires easy window switcher or equivalent
 
 
 @ctx.action_class('user')
@@ -46,3 +48,5 @@ class UserActions:
         actions.key('alt-space')
     def window_overview():
         actions.key('super-tab')
+    def desktop_show():
+        actions.key('super-d')
