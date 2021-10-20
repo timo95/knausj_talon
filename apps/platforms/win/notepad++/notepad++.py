@@ -80,12 +80,12 @@ class UserActions:
 
     def tab_jump(number: int):
         if number < 10:
-            actions.key("ctrl-keypad_{}".format(number))
+            actions.key(f"ctrl-keypad_{number}")
 
     def tab_final():
         """Jumps to the final tab"""
-        print("Notepad doesn't support this...")
-        # actions.key("ctrl-numpad_0")
+        actions.user.tab_jump(1)
+        actions.app.tab_previous()
 
     # find_and_replace.py support begin
 
