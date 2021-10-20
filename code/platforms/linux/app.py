@@ -46,3 +46,5 @@ class UserActions:
         actions.key('super-down')
     def window_menu():
         actions.key('alt-space')
+    def window_overview():
+        actions.key('super-tab')
