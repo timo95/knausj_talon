@@ -72,19 +72,38 @@ def _move_to_screen(
     # Retain the same proportional position on the new screen.
     dest = dest_screen.visible_rect
     src = src_screen.visible_rect
-    # TODO: Test this on different-sized screens
-    #
-    # TODO: Is this the best behaviour for moving to a vertical screen? Probably
-    #   not.
-    proportional_width = dest.width / src.width
-    proportional_height = dest.height / src.height
-    _set_window_pos(
-        window,
-        x=dest.left + (window.rect.left - src.left) * proportional_width,
-        y=dest.top + (window.rect.top - src.top) * proportional_height,
-        width=window.rect.width * proportional_width,
-        height=window.rect.height * proportional_height,
-    )
+
+    # Does the orientation between the screens change? (vertical/horizontal)
+    if (src.width / src.height > 1) != (dest.width / dest.height > 1):
+        # Keep proportions, rotate positions, don't rotate width/height
+        proportional_width = dest.width / src.height
+        proportional_height = dest.height / src.width
+        if src.width / src.height > 1:
+            # Horizontal to vertical
+            width = window.rect.width * proportional_width
+            height = window.rect.height * proportional_height
+        else:
+            # Vertical to horizontal
+            width = window.rect.width * proportional_height
+            height = window.rect.height * proportional_width
+        # Rotated positions
+        x = dest.left + (window.rect.top - src.top) * proportional_width
+        y = dest.top + (window.rect.left - src.left) * proportional_height
+        # Adjust position if it reaches outside of screen
+        x = max(dest.left, min(x, dest.left + dest.width - width))
+        y = max(dest.top, min(y, dest.top + dest.height - height))
+        _set_window_pos(window, x=x, y=y, width=width, height=height)
+    else:
+        proportional_width = dest.width / src.width
+        proportional_height = dest.height / src.height
+        _set_window_pos(
+            window,
+            x=dest.left + (window.rect.left - src.left) * proportional_width,
+            y=dest.top + (window.rect.top - src.top) * proportional_height,
+            width=window.rect.width * proportional_width,
+            height=window.rect.height * proportional_height,
+        )
+
 
 
 def _snap_window_helper(window, pos):
