@@ -1,4 +1,5 @@
-from talon import Context, Module, actions, imgui, settings, ui, app
+from talon import Context, Module, actions, imgui, settings, ui, app, clip
+from pathlib import Path
 
 import os
 
@@ -83,6 +84,7 @@ if app.platform == "windows":
         "This PC",
         "File Explorer",
         "Program Manager",
+        "Dieser PC",
     ]
 
 
@@ -110,9 +112,26 @@ class UserActions:
         return path
 
     def file_manager_terminal_here():
-        actions.key("ctrl-l")
-        actions.insert("cmd.exe")
-        actions.key("enter")
+        # actions.key("ctrl-l")
+        # actions.insert("cmd.exe")
+        # actions.key("enter")
+        path = actions.user.file_manager_current_path()
+        try:
+            is_valid_path = Path(path).is_dir()
+        except:
+            is_valid_path = False
+
+        # Fallback if option not set: "Display the full path in the title bar"
+        # Not used in file_manager_current_path(), because it runs on every focus/title change
+        if not is_valid_path and path != "":
+            actions.key("ctrl-l backspace escape")  # In some cases the selection has to be cleared first
+            with clip.capture() as capture:
+                actions.edit.copy()
+            actions.key("escape")
+            path = capture.get()
+
+        #  Windows Terminal
+        ui.launch(path="wt.exe", args=["-d", path])
 
     def file_manager_show_properties():
         """Shows the properties for the file"""
