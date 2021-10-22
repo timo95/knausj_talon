@@ -73,6 +73,7 @@ def _move_to_screen(
     dest = dest_screen.visible_rect
     src = src_screen.visible_rect
 
+    # TODO: Test vertical screen with different aspect ratios
     # Does the orientation between the screens change? (vertical/horizontal)
     if (src.width / src.height > 1) != (dest.width / dest.height > 1):
         # Keep proportions, rotate positions, don't rotate width/height
