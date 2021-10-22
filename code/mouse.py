@@ -212,11 +212,11 @@ class Actions:
             gui_wheel.show()
 
     def mouse_scroll_left(amount: float = 1):
-        """Scrolls up"""
+        """Scrolls left"""
         actions.mouse_scroll(0, -amount * setting_mouse_wheel_horizontal_amount.get())()
 
     def mouse_scroll_right(amount: float = 1):
-        """Scrolls up"""
+        """Scrolls right"""
         actions.mouse_scroll(0, amount * setting_mouse_wheel_horizontal_amount.get())()
 
     def mouse_scroll_stop():
