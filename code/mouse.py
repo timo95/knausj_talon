@@ -90,6 +90,12 @@ setting_mouse_wheel_down_amount = mod.setting(
     default=120,
     desc="The amount to scroll up/down (equivalent to mouse wheel on Windows by default)",
 )
+setting_mouse_wheel_horizontal_amount = mod.setting(
+    "mouse_wheel_horizontal_amount",
+    type=int,
+    default=40,
+    desc="The amount to scroll left/right",
+)
 
 continuous_scoll_mode = ""
 
@@ -204,6 +210,14 @@ class Actions:
             start_scroll()
         if setting_mouse_hide_mouse_gui.get() == 0:
             gui_wheel.show()
+
+    def mouse_scroll_left(amount: float = 1):
+        """Scrolls up"""
+        actions.mouse_scroll(0, -amount * setting_mouse_wheel_horizontal_amount.get())()
+
+    def mouse_scroll_right(amount: float = 1):
+        """Scrolls up"""
+        actions.mouse_scroll(0, amount * setting_mouse_wheel_horizontal_amount.get())()
 
     def mouse_scroll_stop():
         """Stops scrolling"""
