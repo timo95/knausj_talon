@@ -1,3 +1,3 @@
 app: amazon
 -
-go to {user.amazon_pages}: browser.go(amazon_pages)
+go [to] amazon {user.amazon_pages}: browser.go(amazon_pages)

@@ -4,7 +4,7 @@ from talon import Context
 ctx = Context()
 ctx.matches = r"""
 app: amazon
-win.title: /www\.amazon\.de/
+title: /www\.amazon\.de/
 """
 
 # --- Implement lists ---
@@ -12,5 +12,7 @@ ctx.lists["user.amazon_pages"] = {
     "front": "www.amazon.de",
     "cart": "www.amazon.de/gp/cart/view.html",
     "wishlist": "www.amazon.de/wishlist",
-    "offers": "www.amazon.de/gp/angebote",
+    "deals": "www.amazon.de/gp/angebote",
+    "orders": "www.amazon.de/gp/css/order-history",
+    "history": "www.amazon.de/gp/history",
 }

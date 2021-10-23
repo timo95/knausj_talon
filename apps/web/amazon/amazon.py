@@ -1,10 +1,10 @@
-from talon import ui, clip, Context, Module, actions
+from talon import Module
 
 # App definition
 mod = Module()
 mod.apps.amazon = """
 tag: browser
-win.title: /www\.amazon\./
+title: /www\.amazon\./
 """
 
 # --- Define lists ---
