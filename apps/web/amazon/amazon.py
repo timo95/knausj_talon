@@ -2,7 +2,7 @@ from talon import Module
 
 # App definition
 mod = Module()
-mod.apps.amazon = """
+mod.apps.amazon = r"""
 tag: browser
 title: /www\.amazon\./
 """

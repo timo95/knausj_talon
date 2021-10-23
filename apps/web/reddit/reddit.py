@@ -2,7 +2,7 @@ from talon import Context, Module
 
 # App definition
 mod = Module()
-mod.apps.reddit = """
+mod.apps.reddit = r"""
 tag: browser
 title: /www\.reddit\.com/
 """
