@@ -8,11 +8,12 @@ title: /www\.amazon\.de/
 """
 
 # --- Implement lists ---
-ctx.lists["user.amazon_pages"] = {
-    "front": "www.amazon.de",
-    "cart": "www.amazon.de/gp/cart/view.html",
-    "wishlist": "www.amazon.de/wishlist",
-    "deals": "www.amazon.de/gp/angebote",
-    "orders": "www.amazon.de/gp/css/order-history",
-    "history": "www.amazon.de/gp/history",
-}
+domain = "www.amazon.de"
+ctx.lists["user.amazon_pages"] = {k: domain + v for k, v in {
+    "front": "",
+    "cart": "/gp/cart/view.html",
+    "wishlist": "/wishlist",
+    "deals": "/gp/angebote",
+    "orders": "/gp/css/order-history",
+    "history": "/gp/history",
+}.items()}
