@@ -33,6 +33,7 @@ ctx.lists["user.tex_packages"] = {
     "multi col": "multicol",
     "long table": "longtable",
     "tabular X": "tabularx",
+    "tikz": "tikz",
     "X color": "xcolor",
     "wrap figure": "wrapfig",
 }
@@ -89,6 +90,7 @@ ctx.lists["user.tex_commands"] = {
     "footnote text": "footnotetext[]",
     "graphics path": "graphicspath",
     "include graphics": "includegraphics[width=1\\textwidth]",
+    "input": "input",
     "label": "label",
     "new command": "newcommand{}[]",
     "paragraph": "paragraph",
