@@ -1,6 +1,4 @@
-from urllib.parse import urlparse
-
-from talon import Module, Context, actions, ui
+from talon import Module, Context, actions
 
 ctx = Context()
 mod = Module()
@@ -23,27 +21,9 @@ app: firefox
 """
 
 
-def is_url(url):
-    try:
-        result = urlparse(url)
-        return all([result.scheme, result.netloc])
-    except ValueError:
-        return False
-
-
 @ctx.action_class('browser')
 class BrowserActions:
-    def address():
-        # Addon adds url tab title
-        url = actions.win.title().split(" ")[-4]
-        if not is_url(url):
-            # it might be inside brackets
-            url = url[1: -1]
-        if not is_url(url):
-            url = ""
-        return url
     # TODO
-    # action(browser.address):
     # action(browser.title):
     def go(url: str):
         actions.browser.focus_address()

@@ -2,9 +2,9 @@ from talon import Context
 
 # Context matching
 ctx = Context()
-ctx.matches = r"""
+ctx.matchces = r"""
 app: amazon
-title: /www\.amazon\.co\.jp/
+user.url_netloc: www.amazon.co.jp
 """
 
 # --- Implement lists ---

@@ -4,7 +4,7 @@ from talon import Context, Module
 mod = Module()
 mod.apps.reddit = r"""
 tag: browser
-title: /www\.reddit\.com/
+user.url_netloc: www.reddit.com
 """
 
 # Context matching

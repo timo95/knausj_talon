@@ -2,7 +2,7 @@
 #
 
 tag: browser
-win.title: /gitlab.com/
+user.url_netloc: /gitlab\.com/
 #win.title: /GitLab/
 -
 

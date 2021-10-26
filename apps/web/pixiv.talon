@@ -1,5 +1,5 @@
 tag: browser
-win.title: /www\.pixiv\.net/
+user.url_netloc: www.pixiv.net
 -
 go [to] pixiv (illustrations | front): browser.go("www.pixiv.net")
 go [to] pixiv manga: browser.go("www.pixiv.net/manga")
