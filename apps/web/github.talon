@@ -1,6 +1,6 @@
 # https://help.github.com/en/github/getting-started-with-github/keyboard-shortcuts
 tag: browser
-user.url_netloc: github.com
+browser.host: github.com
 -
 
 # site wide shortcuts

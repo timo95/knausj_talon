@@ -67,9 +67,9 @@ ctx.lists["user.tex_environments"] = {
     "quotation": "quotation",
     "quote": "quote",
     "split": "split",
-    # "table"                       = ["table", "[h!]\n\\centering"]
+    "table": "table",#              = ["table", "[h!]\n\\centering"]
     # "long table"                  = ["longtable", "{lll}"]
-    # "tabular"                     = ["tabular", "{llll}"]
+    "tabular": "tabular",#          = ["tabular", "{llll}"]
     # "tabular X"                   = ["tabular X", "{l X}"]
     "theorem": "theorem",
     "title page": "titlepage",

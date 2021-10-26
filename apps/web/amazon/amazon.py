@@ -4,7 +4,7 @@ from talon import Module
 mod = Module()
 mod.apps.amazon = r"""
 tag: browser
-user.url_netloc: /www\.amazon\./
+browser.host: /www\.amazon\./
 """
 
 # --- Define lists ---

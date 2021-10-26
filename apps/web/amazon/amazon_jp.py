@@ -4,7 +4,7 @@ from talon import Context
 ctx = Context()
 ctx.matchces = r"""
 app: amazon
-user.url_netloc: www.amazon.co.jp
+browser.host: www.amazon.co.jp
 """
 
 # --- Implement lists ---

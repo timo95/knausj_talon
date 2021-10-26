@@ -1,5 +1,5 @@
 tag: browser
-user.url_netloc: twitter.com
+browser.host: twitter.com
 #win.title: /Twitter/
 -
 
