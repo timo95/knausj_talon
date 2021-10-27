@@ -10,11 +10,8 @@ document class {user.tex_document_classes}:
 use package {user.tex_packages}:
     insert("\\usepackage{{{tex_packages}}}")
 begin {user.tex_environments}:
-    insert("\\begin")
-    sleep(200ms)
-    key(enter)
-    insert("{tex_environments}")
-    key(enter)
+    user.paste("\\begin{{{tex_environments}}}\n\n\\end{{{tex_environments}}}")
+    key(up tab)
 insert {user.tex_commands}:
     insert("\\{tex_commands}{{}}")
     key(left)

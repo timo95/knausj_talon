@@ -6,8 +6,5 @@ tikz {user.tikz_commands}:
     insert("\\{tikz_commands}{{}}")
     key(left)
 begin tikz {user.tikz_environments}:
-    insert("\\begin")
-    sleep(200ms)
-    key(enter)
-    insert("{tikz_environments}")
-    key(enter)
+    user.paste("\\begin{{{tex_environments}}}\n\n\\end{{{tex_environments}}}")
+    key(up tab)

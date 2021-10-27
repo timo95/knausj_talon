@@ -151,6 +151,7 @@ punctuation_words = {
     # Currencies
     "dollar sign": "$",
     "pound sign": "£",
+    "euro": "€",
 }
 symbol_key_words = {
     "dot": ".",

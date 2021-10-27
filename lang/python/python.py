@@ -264,7 +264,7 @@ class module_actions:
         if "[|]" in text:
             end_pos = text.find("[|]")
             s = text.replace("[|]", "")
-            actions.insert(s)
+            actions.user.paste(s)
             actions.key(f"left:{len(s) - end_pos}")
         else:
             actions.insert(text)
