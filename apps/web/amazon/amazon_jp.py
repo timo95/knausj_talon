@@ -2,7 +2,7 @@ from talon import Context
 
 # Context matching
 ctx = Context()
-ctx.matchces = r"""
+ctx.matches = r"""
 app: amazon
 browser.host: www.amazon.co.jp
 """
