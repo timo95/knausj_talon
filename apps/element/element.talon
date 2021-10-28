@@ -4,22 +4,16 @@ tag(): user.messaging
 
 # Spaces
 workspace <number_small>: key("ctrl-{number_small}")
-# Messaging
-grab left: key(shift-up)
-grab right: key(shift-down)
-# New format
+# Insert format
 insert command:
     insert("``")
     key(left)
 insert [code] block:
     insert("``````")
-    key(left left left)
-    key(shift-enter)
-    key(shift-enter)
-    key(up)
+    key(left:3 shift-enter:2 up)
 insert bold:
     insert("****")
-    key(left left)
+    key(left:2)
 insert (quotation | citation):
     key(shift-enter)
     insert("> ")
@@ -30,3 +24,9 @@ insert italic:
 bold that: key(ctrl-b)
 (quote | cite) that: key(ctrl->)
 (italic | italicize) that: key(ctrl-i)
+# Calls
+([toggle] mute | unmute): key(ctrl-d)
+[toggle] video: key(ctrl-e)
+# Miscellaneous
+show shortcuts: key(ctrl-/)
+toggle right sidebar: key(ctrl-.)

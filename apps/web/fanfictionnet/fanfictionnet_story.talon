@@ -1,4 +1,5 @@
 app: fanfictionnet
-browser.path: /^\/s\/[0-9]+\/[0-9]+\//
+app: fictionpress
+browser.path: /^\/s\/\d+\/\d+\//
 -
 tag(): user.chapters

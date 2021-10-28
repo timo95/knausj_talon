@@ -1,6 +1,8 @@
 from urllib.parse import urlparse
 
-from talon import Context, actions
+from talon import Context, Module, actions, scope
+
+mod = Module()
 
 ctx = Context()
 ctx.matches = r"""
@@ -18,6 +20,33 @@ def is_url(url):
         return False
 
 
+# --- Define actions ---
+@mod.action_class
+class Actions:
+    def browser_get_parameters() -> dict[str]:
+        """Return url parameters"""
+        parameters = scope.get("browser.url").partition(scope.get("browser.path"))[2]
+        if not parameters.startswith("?"):
+            return {}
+        else:
+            return {k: v for k, v in (p.split("=") for p in parameters[1:].split("&"))}
+
+    def browser_go_path(path: str):
+        """Go to path of current address"""
+        prefix = scope.get('browser.scheme') + "://" + scope.get('browser.host')
+        if len(path) > 0 and not path.startswith("/"):
+            prefix += "/"
+        actions.browser.go(prefix + path)
+
+    def browser_go_subpath(subpath: str):
+        """Go to subpath of current address"""
+        path = scope.get('browser.path')
+        if not path.endswith("/") and len(subpath) > 0:
+            path += "/"
+        actions.user.browser_go_path(path + subpath)
+
+
+# --- Implement actions ---
 @ctx.action_class('browser')
 class BrowserActions:
     def address():

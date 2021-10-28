@@ -8,12 +8,11 @@ browser.host: www.amazon.de
 """
 
 # --- Implement lists ---
-domain = "www.amazon.de"
-ctx.lists["user.amazon_pages"] = {k: domain + v for k, v in {
+ctx.lists["user.amazon_page"] = {
     "front": "",
-    "cart": "/gp/cart/view.html",
-    "wishlist": "/wishlist",
-    "deals": "/gp/angebote",
-    "orders": "/gp/css/order-history",
-    "history": "/gp/history",
-}.items()}
+    "cart": "gp/cart/view.html",
+    "wishlist": "wishlist",
+    "deals": "gp/angebote",
+    "orders": "gp/css/order-history",
+    "history": "gp/history",
+}

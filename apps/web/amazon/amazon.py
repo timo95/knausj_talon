@@ -8,4 +8,4 @@ browser.host: /www\.amazon\./
 """
 
 # --- Define lists ---
-mod.list("amazon_pages", desc="Pages on Amazon")
+mod.list("amazon_page", desc="Pages on Amazon")

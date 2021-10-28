@@ -22,6 +22,14 @@ class EditActions:
     def line_insert_down():
         actions.edit.line_end()
         actions.key("shift-enter")
+    def file_start():
+        actions.key("ctrl-home")
+    def file_end():
+        actions.key("ctrl-end")
+    def extend_file_start():
+        actions.key("ctrl-shift-home")
+    def extend_file_end():
+        actions.key("ctrl-shift-end")
 
 
 @ctx.action_class("user")
@@ -37,4 +45,4 @@ class UserActions:
     def messaging_open_search(): actions.key("ctrl-f")
     def messaging_mark_workspace_read(): pass
     def messaging_mark_channel_read(): actions.key("esc")
-    def messaging_upload_file(): pass
+    def messaging_upload_file(): actions.key("ctrl-shift-u")

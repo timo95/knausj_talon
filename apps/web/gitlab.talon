@@ -2,7 +2,7 @@
 #
 
 tag: browser
-browser.host: /gitlab\.com/
+browser.host: /gitlab\.com$/
 #win.title: /GitLab/
 -
 
