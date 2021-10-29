@@ -22,4 +22,6 @@ app: fanfictionnet_browse
 class UserActions:
     # user.pages
     def page_current(): return int(actions.user.browser_url_parameters().get("p", "1"))
-    def page_jump(number: int): actions.user.browser_set_url_parameter("p", number)
+    def page_jump(number: int):
+        if number > 0:
+            actions.user.browser_set_url_parameter("p", number)

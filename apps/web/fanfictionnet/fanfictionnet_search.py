@@ -20,4 +20,6 @@ app: fanfictionnet_search
 class UserActions:
     # user.pages
     def page_current(): return int(actions.user.browser_url_parameters().get("ppage", "1"))
-    def page_jump(number: int): actions.user.browser_set_url_parameter("ppage", number)
+    def page_jump(number: int):
+        if number > 0:
+            actions.user.browser_set_url_parameter("ppage", number)

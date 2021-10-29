@@ -74,6 +74,7 @@ class UserActions:
     # user.chapters
     def chapter_current(): return int(scope.get("browser.path").split("/")[3])
     def chapter_jump(number: int):
-        tokens = scope.get("browser.path").split("/")
-        tokens[3] = str(number)
-        actions.user.browser_go_path("/".join(tokens), keep_parameters=True)
+        if number > 0:
+            tokens = scope.get("browser.path").split("/")
+            tokens[3] = str(number)
+            actions.user.browser_go_path("/".join(tokens), keep_parameters=True)

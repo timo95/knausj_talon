@@ -25,7 +25,7 @@ def is_url(url):
 class Actions:
     def browser_url_parameters() -> dict[str]:
         """Return address parameters"""
-        parameters = scope.get("browser.url").partition(scope.get("browser.path"))[2]
+        parameters = scope.get("browser.url").partition(scope.get("browser.host") + scope.get("browser.path"))[2]
         if not parameters.startswith("?"):
             return {}
         else:
