@@ -1,19 +1,16 @@
 from talon import Module, Context, actions
 
-# --- App definition ---
+# --- App definitions ---
 mod = Module()
-mod.apps.fanfictionnet_browse = r"""
-app: fanfictionnet
-app: fictionpress
-browser.path: /^\/\w+\/[^\/]+\/$/
-and not browser.path: /^\/(forums|crossovers|betareaders|u)\/\w+\/$/
-browser.path: /^\/[^\/]+-Crossovers\/\d+\/\d+\/$/
+mod.apps.ycombinator_news = """
+tag: browser
+browser.host: news.ycombinator.com
 """
 
 # Context matching
 ctx = Context()
 ctx.matches = r"""
-app: fanfictionnet_browse
+app: ycombinator_news
 """
 
 

@@ -23,27 +23,37 @@ def is_url(url):
 # --- Define actions ---
 @mod.action_class
 class Actions:
-    def browser_get_parameters() -> dict[str]:
-        """Return url parameters"""
+    def browser_url_parameters() -> dict[str]:
+        """Return address parameters"""
         parameters = scope.get("browser.url").partition(scope.get("browser.path"))[2]
         if not parameters.startswith("?"):
             return {}
         else:
             return {k: v for k, v in (p.split("=") for p in parameters[1:].split("&"))}
 
-    def browser_go_path(path: str):
-        """Go to path of current address"""
-        prefix = scope.get('browser.scheme') + "://" + scope.get('browser.host')
-        if len(path) > 0 and not path.startswith("/"):
-            prefix += "/"
-        actions.browser.go(prefix + path)
+    def browser_set_url_parameter(key: str, value: str):
+        """Set parameter to current address"""
+        parameters = actions.user.browser_url_parameters()
+        parameters[key] = value
+        path = scope.get('browser.path') + "?" + '&'.join(f'{k}={v}' for k, v in parameters.items())
+        actions.user.browser_go_path(path)
 
-    def browser_go_subpath(subpath: str):
+    def browser_go_path(path: str, keep_parameters: bool = False):
+        """Go to path of current address"""
+        adress = scope.get('browser.scheme') + "://" + scope.get('browser.host')
+        if len(path) > 0 and not path.startswith("/"):
+            adress += "/"
+        adress += path
+        if keep_parameters:
+            adress += scope.get("browser.url").partition(scope.get("browser.path"))[2]
+        actions.browser.go(adress)
+
+    def browser_go_subpath(subpath: str, keep_parameters: bool = False):
         """Go to subpath of current address"""
         path = scope.get('browser.path')
         if not path.endswith("/") and len(subpath) > 0:
             path += "/"
-        actions.user.browser_go_path(path + subpath)
+        actions.user.browser_go_path(path + subpath, keep_parameters=keep_parameters)
 
 
 # --- Implement actions ---

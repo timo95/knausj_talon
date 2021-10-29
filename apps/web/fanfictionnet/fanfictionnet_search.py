@@ -1,4 +1,4 @@
-from talon import Module, Context, scope, actions
+from talon import Module, Context, actions
 
 # --- App definition ---
 mod = Module()
@@ -19,9 +19,5 @@ app: fanfictionnet_search
 @ctx.action_class("user")
 class UserActions:
     # user.pages
-    def page_current(): return int(actions.user.get_parameters().get("ppage", "1"))
-    def page_jump(number: int):
-        parameters = actions.user.get_parameters()
-        parameters["ppage"] = number
-        prefix = scope.get('browser.host') + scope.get('browser.path')
-        actions.browser.go(f"{prefix}?{'&'.join(f'{k}={v}' for k, v in parameters.items())}")
+    def page_current(): return int(actions.user.browser_url_parameters().get("ppage", "1"))
+    def page_jump(number: int): actions.user.browser_set_url_parameter("ppage", number)
