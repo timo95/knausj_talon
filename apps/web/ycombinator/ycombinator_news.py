@@ -21,4 +21,4 @@ class UserActions:
     def page_current(): return int(actions.user.browser_url_parameters().get("p", "1"))
     def page_jump(number: int):
         if number > 0:
-            actions.user.browser_set_url_parameter("p", number, 1)
+            actions.user.browser_set_url_parameter("p", number)

@@ -72,9 +72,17 @@ ctx.lists["user.fictionpress_genre_fiction"] = {
 @ctx.action_class("user")
 class UserActions:
     # user.chapters
-    def chapter_current(): return int(scope.get("browser.path").split("/")[3])
+    def chapter_current():
+        tokens = scope.get("browser.path").split("/")
+        if len(tokens) > 3:
+            return int(tokens[3])
+        else:
+            return 1
     def chapter_jump(number: int):
         if number > 0:
             tokens = scope.get("browser.path").split("/")
-            tokens[3] = str(number)
+            if len(tokens) > 3:
+                tokens[3] = str(number)
+            else:
+                tokens.append(str(number))
             actions.user.browser_go_path("/".join(tokens), keep_parameters=True)
