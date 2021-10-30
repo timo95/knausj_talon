@@ -1,7 +1,7 @@
 from talon import Context, actions
 
 
-# Pages 1 (parameter ppage)
+# Search results (parameter ppage)
 ctx = Context()
 ctx.matches = r"""
 app: fanfictionnet
@@ -19,7 +19,7 @@ class UserActions:
             actions.user.browser_set_url_parameter("ppage", number)
 
 
-# Pages 2 (parameter p)
+# Story browser (parameter p)
 ctx = Context()
 ctx.matches = r"""
 app: fanfictionnet

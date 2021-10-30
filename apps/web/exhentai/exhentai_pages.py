@@ -52,10 +52,7 @@ class UserActions:
     # user.pages
     def page_current():
         tokens = scope.get("browser.path").split("/")
-        if len(tokens) > 3:
-            return int(tokens[3]) + 1
-        else:
-            return 1
+        return int(tokens[3]) + 1 if len(tokens) > 3 else 1
     def page_jump(number: int):
         if number > 0:
             tokens = scope.get("browser.path").split("/")

@@ -1,8 +1,8 @@
 tag: browser
 browser.host: www.youtube.com
 -
-go [to] youtube (home | front): browser.go("www.youtube.com")
-go [to] youtube explore: browser.go("www.youtube.com/feed/explore")
-go [to] youtube subscriptions: browser.go("www.youtube.com/feed/subscriptions")
-go [to] youtube library: browser.go("www.youtube.com/feed/library")
-go [to] youtube history: browser.go("www.youtube.com/feed/history")
+go [to] youtube (home | front): user.browser_go_path("")
+go [to] youtube explore: user.browser_go_path("/feed/explore")
+go [to] youtube subscriptions: user.browser_go_path("/feed/subscriptions")
+go [to] youtube library: user.browser_go_path("/feed/library")
+go [to] youtube history: user.browser_go_path("/feed/history")
