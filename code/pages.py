@@ -15,7 +15,7 @@ class Actions:
         actions.user.page_jump(actions.user.page_current() + 1)
     def page_previous():
         """Go to previous page"""
-        actions.user.page_jump(min(actions.user.page_current() - 1, 1))
+        actions.user.page_jump(max(actions.user.page_current() - 1, 1))
     def page_jump(number: int):
         """Go to page number"""
     def page_final():

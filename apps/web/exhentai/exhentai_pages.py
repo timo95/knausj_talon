@@ -37,6 +37,7 @@ class UserActions:
     def page_jump(number: int):
         if number > 0:
             actions.user.browser_set_url_parameter("p", number - 1)
+    def page_final(): actions.user.page_jump(100000)
 
 
 # Tag search (subpath 3)
@@ -63,16 +64,17 @@ class UserActions:
             actions.user.browser_go_path("/".join(tokens), keep_parameters=True)
 
 
-# Reader (right/left keys)
+# Reader (keys a/d)
 ctx = Context()
 ctx.matches = r"""
 app: exhentai
-browser.path: /^\/s\/[\w:]+\/\d+-\d/
+browser.path: /^\/s\/[\w:]+\/\d+-\d+/
 """
 ctx.tags = ["user.pages"]
 
 @ctx.action_class("user")
 class UserActions:
     # user.pages
-    def page_next(): actions.key("right")
-    def page_previous(): actions.key("left")
+    def page_current(): return int(scope.get("browser.path").split("/")[3].partition("-")[2])
+    def page_next(): actions.key("d")
+    def page_previous(): actions.key("a")
