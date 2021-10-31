@@ -29,13 +29,13 @@ class Actions:
         if not parameters.startswith("?"):
             return {}
         else:
-            return {k: v for k, v in (p.split("=") for p in parameters[1:].split("&"))}
+            return {k: v for k, _, v in (p.partition("=") for p in parameters[1:].split("&"))}
 
     def browser_set_url_parameter(key: str, value: str):
         """Set parameter to current address"""
         parameters = actions.user.browser_url_parameters()
         parameters[key] = value
-        path = scope.get('browser.path') + "?" + '&'.join(f'{k}={v}' for k, v in parameters.items())
+        path = scope.get('browser.path') + "?" + '&'.join(k if v == "" else f'{k}={v}' for k, v in parameters.items())
         actions.user.browser_go_path(path)
 
     def browser_go_path(path: str, keep_parameters: bool = False):
