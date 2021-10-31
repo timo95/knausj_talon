@@ -45,7 +45,7 @@ class Actions:
             adress += "/"
         adress += path
         if keep_parameters:
-            adress += scope.get("browser.url").partition(scope.get("browser.path"))[2]
+            adress += scope.get("browser.url").partition(scope.get("browser.host") + scope.get("browser.path"))[2]
         actions.browser.go(adress)
 
     def browser_go_subpath(subpath: str, keep_parameters: bool = False):
