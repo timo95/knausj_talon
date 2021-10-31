@@ -40,13 +40,13 @@ class Actions:
 
     def browser_go_path(path: str, keep_parameters: bool = False):
         """Go to path of current address"""
-        adress = scope.get('browser.scheme') + "://" + scope.get('browser.host')
+        address = scope.get('browser.scheme') + "://" + scope.get('browser.host')
         if len(path) > 0 and not path.startswith("/"):
-            adress += "/"
-        adress += path
+            address += "/"
+        address += path
         if keep_parameters:
-            adress += scope.get("browser.url").partition(scope.get("browser.host") + scope.get("browser.path"))[2]
-        actions.browser.go(adress)
+            address += scope.get("browser.url").partition(scope.get("browser.host") + scope.get("browser.path"))[2]
+        actions.browser.go(address)
 
     def browser_go_subpath(subpath: str, keep_parameters: bool = False):
         """Go to subpath of current address"""
