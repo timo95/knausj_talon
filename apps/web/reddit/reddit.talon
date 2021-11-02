@@ -1,3 +1,3 @@
 app: reddit
 -
-go [to] slash {user.subreddits}: browser.go("www.reddit.com/r/{subreddits}")
+go [to] slash {user.subreddits}: user.browser_go_path("/r/{subreddits}")

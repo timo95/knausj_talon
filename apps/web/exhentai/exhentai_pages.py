@@ -44,7 +44,7 @@ class UserActions:
 ctx = Context()
 ctx.matches = r"""
 app: exhentai
-browser.path: /^\/tag\/[\w:]+/
+browser.path: /^\/tag\/[\w:+]+(\/\d*)?$/
 """
 ctx.tags = ["user.pages"]
 
@@ -52,15 +52,12 @@ ctx.tags = ["user.pages"]
 class UserActions:
     # user.pages
     def page_current():
-        tokens = scope.get("browser.path").split("/")
+        tokens = scope.get("browser.path").rstrip("/").split("/")
         return int(tokens[3]) + 1 if len(tokens) > 3 else 1
     def page_jump(number: int):
         if number > 0:
-            tokens = scope.get("browser.path").split("/")
-            if len(tokens) > 3:
-                tokens[3] = str(number - 1)
-            else:
-                tokens.append(str(number - 1))
+            tokens = scope.get("browser.path").rstrip("/").split("/")[:3]
+            tokens += [str(number - 1)][(len(tokens) - 3):]
             actions.user.browser_go_path("/".join(tokens), keep_parameters=True)
 
 
