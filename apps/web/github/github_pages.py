@@ -4,7 +4,7 @@ from talon import Context, actions
 ctx = Context()
 ctx.matches = r"""
 app: github
-browser.path: /^\/\w+\/\w+\/(issues|pulls)/
+browser.path: /^\/[-\w]+\/[-\w]+\/(issues|pulls)\/?/
 """
 ctx.tags = ["user.pages"]
 
