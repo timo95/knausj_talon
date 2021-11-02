@@ -57,7 +57,7 @@ class UserActions:
     def page_jump(number: int):
         if number > 0:
             tokens = scope.get("browser.path").rstrip("/").split("/")[:3]
-            tokens += [str(number - 1)][(len(tokens) - 3):]
+            tokens.append(str(number - 1))
             actions.user.browser_go_path("/".join(tokens), keep_parameters=True)
 
 

@@ -25,8 +25,7 @@ ctx = Context()
 ctx.matches = r"""
 app: fanfictionnet
 app: fictionpress
-browser.path: /^\/\w+\/[^\/]+\/$/
-and not browser.path: /^\/(communities|forums|crossovers|betareaders|u)\/[^\/]+\/$/
+browser.path: /^\/(?!(communities|forums|crossovers|betareaders|u)\/)\w+\/[^\/]+\/$/
 browser.path: /^\/[^\/]+-Crossovers\/\d+\/\d+\/$/
 """
 ctx.tags = ["user.pages"]
