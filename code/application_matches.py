@@ -32,26 +32,15 @@ and app.bundle: com.googlecode.iterm2
 """
 
 # linux specific apps
-apps.keepass = """
+apps.keepassx = """
 os: linux
-and app.name: KeePassX2
-os: linux
-and app.name: KeePassXC
-os: linux
-and app.name: KeepassX2
-os: linux
-and app.name: keepassx2
-os: linux
-and app.name: keepassxc
-os: linux
-and app.name: Keepassxc"""
+app.name: /^keepassx(c|2)$/i
+"""
 
 apps.signal = """
 os: linux
-and app.name: Signal
-
-os: linux
-and app.name: signal
+app.name: Signal
+app.name: signal
 """
 
 apps.termite = """
