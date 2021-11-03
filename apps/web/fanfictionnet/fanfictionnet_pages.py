@@ -39,12 +39,12 @@ class UserActions:
             actions.user.browser_set_url_parameter("p", number)
 
 
-# Community general browser (subpath 5)
+# Community general browser (subpath 5, parent "3")
 ctx = Context()
 ctx.matches = r"""
 app: fanfictionnet
 app: fictionpress
-browser.path: /^\/communities\/general\/0\/(\d\/)?(\d\/?)?$/
+browser.path: /^\/communities\/general\/0\/(\d\/)?(\d+\/?)?$/
 """
 ctx.tags = ["user.pages"]
 
@@ -61,12 +61,12 @@ class UserActions:
             actions.user.browser_go_path("/".join(tokens), keep_parameters=True)
 
 
-# Community browser, forum general browser (subpath 6)
+# Community browser, forum general browser (subpath 6, parent "0/3")
 ctx = Context()
 ctx.matches = r"""
 app: fanfictionnet
 app: fictionpress
-browser.path: /^\/(communities\/(?!general)\w+|forums\/general)\/[^\/]+\/(\d\/){0,2}(\d\/?)?$/
+browser.path: /^\/(communities\/(?!general)\w+|forums\/general)\/[^\/]+\/(\d\/){0,2}(\d+\/?)?$/
 """
 ctx.tags = ["user.pages"]
 
@@ -83,12 +83,12 @@ class UserActions:
             actions.user.browser_go_path("/".join(tokens), keep_parameters=True)
 
 
-# Forum browser (subpath 7)
+# Forum browser (subpath 7, parent "0/3/0")
 ctx = Context()
 ctx.matches = r"""
 app: fanfictionnet
 app: fictionpress
-browser.path: /^\/forums\/(?!general)\w+\/[^\/]+\/(\d\/){0,3}(\d\/?)?$/
+browser.path: /^\/forums\/(?!general)\w+\/[^\/]+\/(\d\/){0,3}(\d+\/?)?$/
 """
 ctx.tags = ["user.pages"]
 

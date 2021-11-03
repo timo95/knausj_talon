@@ -14,8 +14,8 @@ app: reddit
 """
 
 # --- Define and implement lists ---
-mod.list("subreddits", desc="Subreddits")
-ctx.lists["user.subreddits"] = {
+mod.list("subreddit", desc="Subreddits")
+ctx.lists["user.subreddit"] = {
     "all": "all",
     "popular": "popular",
 }
