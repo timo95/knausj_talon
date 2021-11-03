@@ -1,6 +1,6 @@
 from talon import Context, actions, scope
 
-# Browser (parameter "page")
+# Browser (query "page")
 ctx = Context()
 ctx.matches = r"""
 app: exhentai
@@ -16,13 +16,13 @@ ctx.tags = ["user.pages"]
 @ctx.action_class("user")
 class UserActions:
     # user.pages
-    def page_current(): return int(actions.user.browser_url_parameters().get("page", "0")) + 1
+    def page_current(): return int(actions.user.browser_url_query().get("page", "0")) + 1
     def page_jump(number: int):
         if number > 0:
-            actions.user.browser_set_url_parameter("page", number - 1)
+            actions.user.browser_set_url_query("page", number - 1)
 
 
-# Story overview (parameter "p")
+# Story overview (query "p")
 ctx = Context()
 ctx.matches = r"""
 app: exhentai
@@ -33,10 +33,10 @@ ctx.tags = ["user.pages"]
 @ctx.action_class("user")
 class UserActions:
     # user.pages
-    def page_current(): return int(actions.user.browser_url_parameters().get("p", "0")) + 1
+    def page_current(): return int(actions.user.browser_url_query().get("p", "0")) + 1
     def page_jump(number: int):
         if number > 0:
-            actions.user.browser_set_url_parameter("p", number - 1)
+            actions.user.browser_set_url_query("p", number - 1)
     def page_final(): actions.user.page_jump(100000)
 
 
@@ -58,7 +58,7 @@ class UserActions:
         if number > 0:
             tokens = scope.get("browser.path").rstrip("/").split("/")[:3]
             tokens.append(str(number - 1))
-            actions.user.browser_go_path("/".join(tokens), keep_parameters=True)
+            actions.user.browser_go_path("/".join(tokens), keep_query=True)
 
 
 # Reader (keys a/d)

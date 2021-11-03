@@ -18,7 +18,7 @@ class UserActions:
         if number > 0:
             tokens = scope.get("browser.path").rstrip("/").split("/")[:2]
             tokens += ["Page", str(number)][(len(tokens) - 1):]
-            actions.user.browser_go_path("/".join(tokens), keep_parameters=True)
+            actions.user.browser_go_path("/".join(tokens), keep_query=True)
 
 
 # Tag pages (subpath 3)
@@ -39,4 +39,4 @@ class UserActions:
         if number > 0:
             tokens = scope.get("browser.path").rstrip("/").split("/")[:3]
             tokens.append(str(number))
-            actions.user.browser_go_path("/".join(tokens), keep_parameters=True)
+            actions.user.browser_go_path("/".join(tokens), keep_query=True)

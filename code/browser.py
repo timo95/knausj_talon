@@ -23,37 +23,35 @@ def is_url(url):
 # --- Define actions ---
 @mod.action_class
 class Actions:
-    def browser_url_parameters() -> dict[str]:
-        """Return address parameters"""
-        parameters = scope.get("browser.url").partition(scope.get("browser.host") + scope.get("browser.path"))[2]
-        if not parameters.startswith("?"):
-            return {}
-        else:
-            return {k: v for k, _, v in (p.partition("=") for p in parameters[1:].split("&"))}
+    def browser_url_query(delimiter: str = "&") -> dict[str]:
+        """Return address query"""
+        query = scope.get("browser.url").partition("?")[2]
+        return {} if query == "" else {k: (None if s == "" else v) for k, s, v in (p.partition("=") for p in query.split(delimiter))}
 
-    def browser_set_url_parameter(key: str, value: str):
-        """Set parameter to current address"""
-        parameters = actions.user.browser_url_parameters()
-        parameters[key] = value
-        path = scope.get('browser.path') + "?" + '&'.join(k if v == "" else f'{k}={v}' for k, v in parameters.items())
-        actions.user.browser_go_path(path)
+    def browser_set_url_query(key: str, value: str, delimiter: str = "&"):
+        """Set query to current address"""
+        query = actions.user.browser_url_query(delimiter=delimiter)
+        query[key] = value
+        address = scope.get("browser.url").partition("?")[0] + "?"
+        actions.browser.go(address + delimiter.join(k if v is None else f"{k}={v}" for k, v in query.items()))
 
-    def browser_go_path(path: str, keep_parameters: bool = False):
+    def browser_go_path(path: str, keep_query: bool = False):
         """Go to path of current address"""
         address = scope.get('browser.scheme') + "://" + scope.get('browser.host')
         if len(path) > 0 and not path.startswith("/"):
             address += "/"
         address += path
-        if keep_parameters:
-            address += scope.get("browser.url").partition(scope.get("browser.host") + scope.get("browser.path"))[2]
+        if keep_query:
+            tokens = scope.get("browser.url").partition("?")
+            address += tokens[1] + tokens[2]
         actions.browser.go(address)
 
-    def browser_go_subpath(subpath: str, keep_parameters: bool = False):
+    def browser_go_subpath(subpath: str, keep_query: bool = False):
         """Go to subpath of current address"""
         path = scope.get('browser.path')
         if not path.endswith("/") and len(subpath) > 0:
             path += "/"
-        actions.user.browser_go_path(path + subpath, keep_parameters=keep_parameters)
+        actions.user.browser_go_path(path + subpath, keep_query=keep_query)
 
 
 # --- Implement actions ---

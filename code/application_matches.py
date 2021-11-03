@@ -32,11 +32,6 @@ and app.bundle: com.googlecode.iterm2
 """
 
 # linux specific apps
-apps.keepassx = """
-os: linux
-app.name: /^keepassx(c|2)$/i
-"""
-
 apps.signal = """
 os: linux
 app.name: Signal

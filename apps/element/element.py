@@ -3,11 +3,12 @@ from talon import Context, Module, actions
 # --- App definition ---
 mod = Module()
 mod.apps.element = """
-app.name: Element
 os: windows
 and app.name: Element
 os: windows
 and app.exe: Element.exe
+os: linux
+and app.name: Element
 """
 
 # Context matching
@@ -17,6 +18,7 @@ app: element
 """
 
 
+# --- Implement actions ---
 @ctx.action_class("edit")
 class EditActions:
     # edit
