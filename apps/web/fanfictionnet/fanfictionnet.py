@@ -1,4 +1,4 @@
-from talon import Module, Context, scope, actions
+from talon import Module, Context
 
 # --- App definitions ---
 mod = Module()
@@ -66,22 +66,3 @@ ctx.lists["user.fictionpress_genre_fiction"] = {
     "kids": "Kids/",
     "western": "Western/",
 }
-
-
-# --- Implement actions ---
-@ctx.action_class("user")
-class UserActions:
-    # user.chapters
-    def chapter_current():
-        # /s/<number>[/<chapter>/<chapter_name>]
-        tokens = scope.get("browser.path").rstrip("/").split("/")
-        return int(tokens[3]) if len(tokens) > 3 else 1
-    def chapter_jump(number: int):
-        if number > 0:
-            tokens = scope.get("browser.path").rstrip("/").split("/")
-            # chapter name can be after chapter number -> replace number, keep name
-            if len(tokens) > 3:
-                tokens[3] = str(number)
-            else:
-                tokens.append(str(number))
-            actions.user.browser_go_path("/".join(tokens), keep_query=True)

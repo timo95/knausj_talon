@@ -1,6 +1,7 @@
 from talon import Context, actions, scope
 
-# Main page (subpath 2, parent "Page")
+# Main page (subpath 2)
+# /[Page/<page>]
 ctx = Context()
 ctx.matches = r"""
 app: anandtech
@@ -22,6 +23,7 @@ class UserActions:
 
 
 # Tag pages (subpath 3)
+# /tag/<tag>[/<page>]
 ctx = Context()
 ctx.matches = r"""
 app: anandtech

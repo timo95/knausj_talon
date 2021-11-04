@@ -1,6 +1,8 @@
 from talon import Context, actions
 
 # Issues, pull requests (query "page")
+# /<user>/<repository>/issues
+# /<user>/<repository>/pulls
 ctx = Context()
 ctx.matches = r"""
 app: github

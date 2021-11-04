@@ -38,6 +38,9 @@ inside (squares | square brackets | list):
 inside (bracket | braces):
 	insert("{}")
 	key(left)
+inside angle:
+    insert("<>")
+	key(left)
 inside percent:
 	insert("%%")
 	key(left)

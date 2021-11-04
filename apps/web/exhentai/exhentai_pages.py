@@ -23,6 +23,7 @@ class UserActions:
 
 
 # Story overview (query "p")
+# /g/<number>/<code>/
 ctx = Context()
 ctx.matches = r"""
 app: exhentai
@@ -41,6 +42,7 @@ class UserActions:
 
 
 # Tag search (subpath 3)
+# /tag/<tag>[/<page>]
 ctx = Context()
 ctx.matches = r"""
 app: exhentai
@@ -62,6 +64,7 @@ class UserActions:
 
 
 # Reader (keys a/d)
+# /s/<string>/<number>-<page>
 ctx = Context()
 ctx.matches = r"""
 app: exhentai
