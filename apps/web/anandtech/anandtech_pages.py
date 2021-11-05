@@ -22,12 +22,13 @@ class UserActions:
             actions.user.browser_go_path("/".join(tokens), keep_query=True)
 
 
-# Tag pages (subpath 3)
+# Tag, author (subpath 3)
 # /tag/<tag>[/<page>]
+# /author/<number>[/<page>]
 ctx = Context()
 ctx.matches = r"""
 app: anandtech
-browser.path: /^\/tag\/\w+(\/\d+\/?)?$/
+browser.path: /^\/(tag|author|Author)\/\w+(\/\d+\/?)?$/
 """
 ctx.tags = ["user.pages"]
 
@@ -40,5 +41,27 @@ class UserActions:
     def page_jump(number: int):
         if number > 0:
             tokens = scope.get("browser.path").rstrip("/").split("/")[:3]
+            tokens.append(str(number))
+            actions.user.browser_go_path("/".join(tokens), keep_query=True)
+
+
+# Article (subpath 4)
+# /show/<number>/<name>[/<page>]
+ctx = Context()
+ctx.matches = r"""
+app: anandtech
+browser.path: /^\/show\/\d+\/[-\w]+(\/\d+\/?)?$/
+"""
+ctx.tags = ["user.pages"]
+
+@ctx.action_class("user")
+class UserActions:
+    # user.pages
+    def page_current():
+        tokens = scope.get("browser.path").rstrip("/").split("/")
+        return int(tokens[4]) if len(tokens) > 4 else 1
+    def page_jump(number: int):
+        if number > 0:
+            tokens = scope.get("browser.path").rstrip("/").split("/")[:4]
             tokens.append(str(number))
             actions.user.browser_go_path("/".join(tokens), keep_query=True)
