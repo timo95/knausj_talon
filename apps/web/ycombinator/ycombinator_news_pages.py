@@ -8,7 +8,6 @@ browser.path: /^\/(|item|news|newest|front|newcomments|ask|show|best|active|best
 """
 ctx.tags = ["user.pages"]
 
-# --- Implement actions ---
 @ctx.action_class("user")
 class UserActions:
     # user.pages

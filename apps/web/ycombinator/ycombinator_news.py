@@ -1,6 +1,6 @@
 from talon import Module
 
-# --- App definitions ---
+# --- App definition ---
 mod = Module()
 mod.apps.ycombinator_news = """
 tag: browser
