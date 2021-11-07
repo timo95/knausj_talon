@@ -1,6 +1,4 @@
 import os
-import pathlib
-import subprocess
 
 from talon import (
     Module,
