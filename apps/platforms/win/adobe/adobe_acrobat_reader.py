@@ -43,5 +43,7 @@ class UserActions:
     def page_previous(): actions.key("left")
     def page_jump(number: int):
         if number > 0:
-            actions.key(f"ctrl-shift-n {number} enter")
+            actions.key("ctrl-shift-n")
+            actions.insert(str(number))
+            actions.key("enter")
     def page_final(): actions.key("end")
