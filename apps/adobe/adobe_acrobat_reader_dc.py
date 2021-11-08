@@ -1,8 +1,8 @@
 from talon import Module, Context, actions
 
-# --- App definitions ---
+# --- App definition ---
 mod = Module()
-mod.apps.adobe_acrobat_reader = """
+mod.apps.adobe_acrobat_reader_dc = """
 os: windows
 and app.name: Adobe Acrobat Reader DC 
 os: windows
@@ -11,8 +11,8 @@ and app.exe: AcroRd32.exe
 
 # Context matching
 ctx = Context()
-ctx.matches = r"""
-app: adobe_acrobat_reader
+ctx.matches = """
+app: adobe_acrobat_reader_dc
 """
 
 
