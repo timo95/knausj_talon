@@ -21,7 +21,7 @@ and app.exe: explorer.exe
 apps.windows_file_browser = """
 os: windows
 and app.name: /.*/
-and title: /(Save|Open|Browse|Select|Speichern unter|Datei öffnen)/
+and title: /(Save|Open|Browse|Select|Speichern unter|Datei öffnen|Dokument öffnen|Öffnen)/
 """
 
 ctx = Context()

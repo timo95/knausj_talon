@@ -1,4 +1,4 @@
-app: calibre_reader
+app: calibre_viewer
 -
 # Set tags
 tag(): user.pages

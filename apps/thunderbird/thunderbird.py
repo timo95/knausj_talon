@@ -4,14 +4,14 @@ from talon import Module, Context
 # Main app TODO: mac context
 mod = Module()
 mod.apps.thunderbird = """
-os: linux
-and app.name: Thunderbird
-"""
-mod.apps.thunderbird = """
 os: windows
 and app.name: Thunderbird
 os: windows
 and app.exe: thunderbird.exe
+"""
+mod.apps.thunderbird = """
+os: linux
+and app.name: Thunderbird
 """
 
 # Inbox tab TODO: also matches emails opened in new tab
@@ -24,7 +24,7 @@ title: /@/
 months = [
     "January", "February", "March", "April", "May", "June",  # English
     "July", "August", "September", "October", "November", "December",
-    "Januar", "Februar", "März", "Mai", "Juni", "Juli", "Oktober", "Dezember"  # German
+    "Januar", "Februar", "März", "Mai", "Juni", "Juli", "Oktober", "Dezember",  # German
 ]
 mod.apps.thunderbird_calendar = f"""
 app: thunderbird
@@ -33,14 +33,14 @@ title: Kalender - Mozilla Thunderbird
 title: /({"|".join(map(lambda m: m + " ", months))})/
 """
 
-# Tasks tab TODO: implement
+# Tasks tab TODO: implement commands
 mod.apps.thunderbird_tasks = """
 app: thunderbird
 title: Tasks - Mozilla Thunderbird
 title: Aufgaben - Mozilla Thunderbird
 """
 
-# Mail composer window TODO: implement
+# Mail composer window TODO: implement commands
 mod.apps.thunderbird_composer = """
 app: thunderbird
 title: /Write: /

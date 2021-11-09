@@ -3,13 +3,22 @@ from talon import Module, Context, actions
 # --- App definition ---
 mod = Module()
 mod.apps.okular = """
+os: windows
+and app.name: okular.exe
+os: windows
+and app.exe: okular.exe
+"""
+mod.apps.okular = """
 os: linux
 and app.name: okular
 """
+# TODO: mac context
 
 # Context matching
 ctx = Context()
 ctx.matches = """
+os: windows
+os: linux
 app: okular
 """
 

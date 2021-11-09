@@ -20,8 +20,9 @@ app: gnome_terminal
 @ctx.action_class("user")
 class user_actions:
     # user.tabs
-    def tab_jump(number):
-        actions.key(f"alt-{number}")
+    def tab_jump(number: int):
+        if number < 9:
+            actions.key(f"alt-{number}")
 
 
 @ctx.action_class("app")

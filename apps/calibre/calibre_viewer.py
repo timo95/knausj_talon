@@ -2,7 +2,7 @@ from talon import Module, Context, actions
 
 # --- App definition ---
 mod = Module()
-mod.apps.calibre_reader = """
+mod.apps.calibre_viewer = """
 app: calibre
 title: /E-book viewer$/
 title: /eBook-Betrachter$/
@@ -11,7 +11,9 @@ title: /eBook-Betrachter$/
 # Context matching
 ctx = Context()
 ctx.matches = """
-app: calibre_reader
+os: windows
+os: linux
+app: calibre_viewer
 """
 
 
