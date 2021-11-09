@@ -7,7 +7,7 @@ os: mac
 app: thunderbird
 """
 
-
+# TODO: test commands
 # --- Implement actions ---
 @ctx.action_class('app')
 class AppActions:

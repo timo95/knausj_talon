@@ -29,13 +29,11 @@ class AppActions:
     def window_hide_others():
         actions.key('super-home')
     def window_next():
-        actions.key('alt-escape')  # unordered
-        # actions.key('alt-`')  # requires easy window switcher or equivalent
+        actions.key('alt-^')  # language dependent, requires easy window switcher or equivalent
     def window_open():
         actions.key('ctrl-n')
     def window_previous():
-        actions.key('alt-shift-escape')  # unordered
-        # actions.key('alt-shift-`')  # requires easy window switcher or equivalent
+        actions.key('alt-shift-^')  # language dependent, requires easy window switcher or equivalent
 
 
 @ctx.action_class('user')

@@ -24,11 +24,12 @@ mod.list("tex_packages", desc="TeX packages")
 ctx.lists["user.tex_packages"] = {
     "AMS math": "amsmath",
     # "bib latex"   = ["[style=authoryear]", "biblatex"]
-    "colour": "color",
     "bib latex": "biblatex",
+    "colour": "color",
     "geometry": "geometry",
-    "hyper ref": "hyperref",
     "graphic X": "graphicx",
+    "hyper ref": "hyperref",
+    "import": "import",
     "math tools": "mathtools",
     "multi col": "multicol",
     "long table": "longtable",
@@ -140,6 +141,26 @@ ctx.lists["user.tex_commands_noarg"] = {
     "text height": "textheight",
     "text width": "textwidth",
     "vertical line": "vline",
+}
+
+mod.list("tex_magic_comments", desc="TeX magic comments")
+ctx.lists["user.tex_magic_comments"] = {
+    "begin preamble": "begin preamble",
+    "bibtex compiler": "BibTeX Compiler",
+    "compiler": "Compiler",
+    "encoding": "encoding",
+    "end preamble": "end preamble",
+    "language": "language",
+    "preview preamble": "preview preamble",
+    "program": "Program",
+    "root": "root",
+    "spell check": "spellcheck",
+}
+
+mod.list("tex_magic_comments_noval", desc="TeX magic comments without values")
+ctx.lists["user.tex_magic_comments_noval"] = {
+    "parser off": "parser off",
+    "parser on": "parser on",
 }
 
 
