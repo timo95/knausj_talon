@@ -143,7 +143,7 @@ ctx = Context()
 ctx.matches = r"""
 app: fanfictionnet
 app: fictionpress
-browser.path: /^\/s\/\d+(\/(\d(\/([^\/]+\/?)?)?)?)?$/
+browser.path: /^\/s\/\d+(\/(\d+(\/([^\/]+\/?)?)?)?)?$/
 """
 ctx.tags = ["user.chapters"]
 
