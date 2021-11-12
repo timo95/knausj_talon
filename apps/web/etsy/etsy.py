@@ -2,8 +2,7 @@ from talon import Module
 
 # --- App definition ---
 mod = Module()
-mod.apps.exhentai = """
+mod.apps.etsy = """
 tag: browser
-browser.host: exhentai.org
-browser.host: e-hentai.org
+browser.host: www.etsy.com
 """

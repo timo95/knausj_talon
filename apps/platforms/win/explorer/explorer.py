@@ -16,12 +16,13 @@ and app.exe: explorer.exe
 """
 
 # many commands should work in most save/open dialog.
-# note the "show options" stuff won't work unless work
+# note the "show options" stuff won't work
 # unless the path is displayed in the title, which is rare for those
 apps.windows_file_browser = """
 os: windows
-and app.name: /.*/
-and title: /(Save|Open|Browse|Select|Speichern unter|Datei öffnen|Dokument öffnen|Öffnen)/
+app.name: /.*/
+title: /(Save|Open|Browse|Select)/
+title: /^(Speichern unter|Datei öffnen|Datei hochladen|Dokument öffnen|Öffnen)$/
 """
 
 ctx = Context()
