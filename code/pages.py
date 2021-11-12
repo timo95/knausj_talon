@@ -2,7 +2,7 @@ from talon import Module, actions
 
 # --- Tag definition ---
 mod = Module()
-mod.tag("pages", desc="Anything with pages")
+mod.tag("pages", desc="Anything with page navigation")
 
 
 # --- Define actions ---

@@ -12,7 +12,7 @@ mod.apps.thorium_reader = """
 os: linux
 and app.name: EDRLab.ThoriumReader
 """
-# TODO: mac context
+# TODO: mac context and implementation
 
 # Context matching
 ctx = Context()

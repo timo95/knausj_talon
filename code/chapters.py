@@ -2,7 +2,7 @@ from talon import Module, actions
 
 # --- Tag definition ---
 mod = Module()
-mod.tag("chapters", desc="Literature with chapters")
+mod.tag("chapters", desc="Reader app with chapter navigation")
 
 
 # --- Define actions ---

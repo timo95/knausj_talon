@@ -12,4 +12,4 @@ and app.name: Adobe Acrobat Reader DC
 os: windows
 and app.exe: AcroRd32.exe
 """
-# TODO: mac context
+# TODO: mac context and implementation
