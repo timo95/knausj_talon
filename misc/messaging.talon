@@ -1,5 +1,7 @@
 tag: user.messaging
 -
+tag(): user.emoji
+
 # Navigation
 previous (workspace | server): user.messaging_workspace_previous()
 next (workspace | server): user.messaging_workspace_next()
