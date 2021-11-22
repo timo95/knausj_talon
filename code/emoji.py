@@ -14,35 +14,35 @@ tag: user.emoji
 # --- Define and implement lists ---
 mod.list("emoticon", desc="Emoticons (ascii)")
 ctx.lists["user.emoticon"] = {
+    "crying": ":'(",
     "happy": ":)",
-    "laughing": ":D",
-    "wink": ";)",
-    "crying": ";(",
-    "sad": ":(",
     "heart": "<3",
+    "laughing": ":D",
+    "sad": ":(",
     "surprised": ":o",
+    "wink": ";)",
 }
 
 mod.list("emoji", desc="Emoji (unicode)")
 ctx.lists["user.emoji"] = {
-    "happy": "😀",
+    "blushing": "😳",
     "crying": "😭",
+    "happy": "😀",
+    "heart": "❤️",
     "sad": "🙁",
     "shrug": "🤷",
-    "heart": "❤️",
-    "blushing": "😳",
 }
 
 mod.list("kaomoji", desc="Kaomoji (unicode)")
 ctx.lists["user.kaomoji"] = {
-    "happy": "(* ^ ω ^)",
+    "blushing": "(⁄ ⁄•⁄ω⁄•⁄ ⁄)",
     "crying": "(╥﹏╥)",
+    "embarrassed": "(⌒_⌒;)",
+    "flower girl": "(◕‿◕✿)",
+    "happy": "(* ^ ω ^)",
+    "lenny": "( ͡° ͜ʖ ͡°)",
     "sad": "(｡•́︿•̀｡)",
     "shrug": r"¯\_(ツ)_/¯",
     "table flip": "(╯°□°)╯︵ ┻━┻",
     "table return": "┬─┬ ノ( ゜-゜ノ)",
-    "flower girl": "(◕‿◕✿)",
-    "lenny": "( ͡° ͜ʖ ͡°)",
-    "embarrassed": "(⌒_⌒;)",
-    "blushing": "(⁄ ⁄•⁄ω⁄•⁄ ⁄)",
 }
