@@ -32,8 +32,8 @@ class UserActions:
     # user.messaging
     def messaging_workspace_previous(): pass
     def messaging_workspace_next(): pass
-    def messaging_channel_previous(): actions.key("alt:down up alt:up")
-    def messaging_channel_next(): actions.key("alt:down down alt:up")
+    def messaging_channel_previous(): actions.key("alt-up")
+    def messaging_channel_next(): actions.key("alt-down")
     def messaging_unread_previous(): actions.key("alt-shift-up")
     def messaging_unread_next(): actions.key("alt-shift-down")
     def messaging_mark_workspace_read(): pass

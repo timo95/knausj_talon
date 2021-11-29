@@ -12,6 +12,14 @@ class Actions:
         """shows the current desktops"""
         app.notify("Not supported on this operating system")
 
+    def desktop_open():
+        """opens a new desktop"""
+        app.notify("Not supported on this operating system")
+
+    def desktop_close():
+        """closes the current desktops"""
+        app.notify("Not supported on this operating system")
+
     def desktop_next():
         """move to next desktop"""
         app.notify("Not supported on this operating system")

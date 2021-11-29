@@ -9,8 +9,18 @@ os: windows
 and app.exe: KeePass.exe
 """
 mod.apps.keepassx = """
+os: windows
+and app.name: KeePassX.exe
+os: windows
+and app.exe: KeePassX.exe
+"""
+mod.apps.keepassx = """
 os: linux
 app.name: /^keepassx(c|2)$/i
+"""
+mod.apps.keepassxc = """
+os: windows
+and app.name: KeePassXC.exe
 """
 
 

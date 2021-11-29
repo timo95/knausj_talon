@@ -43,10 +43,11 @@ class UserActions:
 
 # Tag search (subpath 3)
 # /tag/<tag>[/<page>]
+# /uploader/<uploader>[/<page>]
 ctx = Context()
 ctx.matches = r"""
 app: exhentai
-browser.path: /^\/tag\/[\w:+]+(\/\d*)?$/
+browser.path: /^\/(tag|uploader)\/[\w:+]+(\/\d*)?$/
 """
 ctx.tags = ["user.pages"]
 

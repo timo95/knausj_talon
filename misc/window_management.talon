@@ -7,7 +7,6 @@ window maximize: user.window_maximize()
 window restore: user.window_restore()
 window menu: user.window_menu()
 window overview: user.window_overview()
-desktop show: user.desktop_show()
 focus <user.running_applications>: user.switcher_focus(running_applications)
 # following only works on windows. Can't figure out how to make it work for mac. No idea what the equivalent for linux would be.
 focus$: user.switcher_menu()

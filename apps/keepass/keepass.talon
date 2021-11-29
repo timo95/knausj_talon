@@ -1,5 +1,6 @@
 app: keepass
 app: keepassx
+app: keepassxc
 -
 tag(): user.tabs
 tag(): user.password_manager

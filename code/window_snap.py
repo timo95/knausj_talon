@@ -247,5 +247,3 @@ class Actions:
         """Open menu to manage window"""
     def window_overview():
         """Open window overview"""
-    def desktop_show():
-        """Minimize all windows"""

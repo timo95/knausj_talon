@@ -9,8 +9,8 @@ entry edit: user.password_manager_entry_edit()
 entry delete: user.password_manager_entry_delete()
 
 # Entry data
-copy user [name]: user.password_manager_copy_user()
-copy password: user.password_manager_copy_password()
-copy (earl|url|link): user.password_manager_copy_url()
-open (earl|url|link): user.password_manager_open_url()
-fill password: user.password_manager_fill()
+password copy: user.password_manager_password_copy()
+password fill: user.password_manager_password_fill()
+user [name] copy: user.password_manager_user_copy()
+(earl|url|link) copy: user.password_manager_url_copy()
+(earl|url|link) open: user.password_manager_url_open()

@@ -17,6 +17,12 @@ class Actions:
     def desktop_show():
         actions.key("super-tab")
 
+    def desktop_open():
+        actions.key("super-ctrl-d")
+
+    def desktop_close():
+        actions.key("super-ctrl-f4")
+
     # def window_move_desktop_left():
 
     # def window_move_desktop_right():
