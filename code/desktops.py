@@ -17,7 +17,7 @@ class Actions:
         app.notify("Not supported on this operating system")
 
     def desktop_close():
-        """closes the current desktops"""
+        """closes the current desktop"""
         app.notify("Not supported on this operating system")
 
     def desktop_next():

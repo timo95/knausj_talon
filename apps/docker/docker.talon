@@ -5,6 +5,9 @@ and tag: user.docker
 docker display:
     user.docker()
     " ps "
+docker display all:
+    user.docker()
+    " ps -a "
 docker logs:
     user.docker()
     " logs "

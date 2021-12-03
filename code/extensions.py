@@ -27,11 +27,11 @@ _file_extensions_defaults = {
     "dot TS": ".ts",
     "dot type script": ".ts",
     "dot csv": ".csv",
-    "totssv": ".csv",
-    "tot csv": ".csv",
     "dot cassie": ".csv",
     "dot text": ".txt",
     "dot pdf": ".pdf",
+    "dot svg": ".svg",
+    "dot savage": ".svg",
 }
 
 file_extensions = get_list_from_csv(

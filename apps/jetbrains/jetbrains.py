@@ -91,7 +91,6 @@ def send_idea_command(cmd):
             timeout=(0.05, 3.05),
         )
         response.raise_for_status()
-        response.encoding = "utf-8"  # TODO: find real problem and fix it properly
         return response.text
 
 
