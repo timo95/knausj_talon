@@ -21,7 +21,7 @@ class AppActions:
 @ctx.action_class("user")
 class UserActions:
     # user.password_manager
-    def password_manager_entry_new(): actions.key("ctrl-n")
+    def password_manager_entry_new(): actions.key("ctrl-i")
     def password_manager_entry_clone(): actions.key("ctrl-k")
     def password_manager_password_copy(): actions.key("ctrl-c")
     def password_manager_user_copy(): actions.key("ctrl-b")
