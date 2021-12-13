@@ -16,7 +16,7 @@ and tag: user.docker
 # --- Define actions ---
 @mod.action_class
 class Actions:
-    def docker():
-        """Command to run docker"""
-    def docker_compose():
-        """Command to run docker compose"""
+    def docker(command: str = ""):
+        """Run docker command"""
+    def docker_compose(command: str = ""):
+        """Run docker compose command"""

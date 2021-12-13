@@ -1,14 +1,12 @@
 question [mark]: "?"
 (downscore | underscore): "_"
 double dash: "--"
-(bracket | brack | left bracket): "{"
-(rbrack | are bracket | right bracket): "}"
 triple quote: "'''"
-(triple grave | triple back tick | gravy):
+triple (grave | back tick):
     insert("```")
 (dot dot | dotdot): ".."
 ellipses: "..."
-(comma and | spamma): ", "
+comma and: ", "
 plus: "+"
 arrow: "->"
 dub arrow: "=>"
@@ -29,7 +27,7 @@ empty escaped string:
     "\\'\\'"
     key(left)
     key(left)
-(inside parens | args):
+inside parens:
 	insert("()")
 	key(left)
 inside (squares | square brackets | list):

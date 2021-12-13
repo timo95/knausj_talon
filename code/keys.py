@@ -1,6 +1,7 @@
 from talon import Module, Context, app
 
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip aegis earth uber asset".split(
+default_alphabet = "alfa beat cap delta each fine gust harp sit jury crunch look made near oscar pit quebec red sun trap urge vest whale plex yank zip aegis earth uber asset".split(
+#default_alphabet = "alfa bravo charlie delta echo foxtrot golf hotel india juliett kilo lima mike november oscar papa quebec romeo sierra tango uniform victor whisky xray yankee zulu aegis earth uber asset".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyzäöüß"
@@ -178,10 +179,10 @@ symbol_key_words = {
     "left paren": "(",
     "R paren": ")",
     "right paren": ")",
-    "brace": "{",
-    "left brace": "{",
-    "R brace": "}",
-    "right brace": "}",
+    "bracket": "{",
+    "left bracket": "{",
+    "R bracket": "}",
+    "right bracket": "}",
     "angle": "<",
     "left angle": "<",
     "less than": "<",
@@ -193,7 +194,7 @@ symbol_key_words = {
     "hash": "#",
     "percent": "%",
     "caret": "^",
-    "amper": "&",
+    "ampersand": "&",
     "pipe": "|",
     "dubquote": '"',
     "double quote": '"',
@@ -238,7 +239,7 @@ alternate_keys = {
     "page up": "pageup",
     "page down": "pagedown",
 	"start": "super",
-    "ender": "end",
+    "tail": "end",
     "tabber": "tab",
 }
 # mac apparently doesn't have the menu key.

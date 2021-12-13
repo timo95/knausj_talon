@@ -31,8 +31,8 @@ class UserActions:
         page = actions.edit.selected_text()
         actions.key("tab:2 enter")
         return int(page)
-    def page_next(): actions.key("right")
-    def page_previous(): actions.key("left")
+    def page_next(): actions.key("ctrl-pagedown")
+    def page_previous(): actions.key("ctrl-pageup")
     def page_jump(number: int):
         if number > 0:
             actions.key("ctrl-shift-n")

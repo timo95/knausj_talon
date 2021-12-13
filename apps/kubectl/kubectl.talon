@@ -1,7 +1,7 @@
 tag: terminal
 and tag: user.kubectl
 -
-cube [control]: "kubectl "
+#cube [control]: "kubectl "
 
 cube create:         "kubectl create "
 cube expose:         "kubectl expose "

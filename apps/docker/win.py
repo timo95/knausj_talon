@@ -1,8 +1,7 @@
 from talon import Context, Module, actions
 
 mod = Module()
-mod.tag("docker", desc="tag for enabling docker commands in your terminal")
-docker = "docker"
+mod.tag("docker", desc="Enables docker commands")
 
 ctx = Context()
 ctx.matches = r"""
@@ -14,7 +13,7 @@ and tag: user.docker
 
 @ctx.action_class("user")
 class UserActions:
-    def docker():
-        actions.insert("docker")
-    def docker_compose():
-        actions.insert("docker-compose")
+    def docker(command: str = ""):
+        actions.insert("docker " + command)
+    def docker_compose(command: str = ""):
+        actions.insert("docker-compose " + command)

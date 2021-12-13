@@ -2,10 +2,10 @@ app: thunderbird_inbox
 -
 # navigate
 (mail | message) open: key(enter)
-(mail | message) up: key(b)
-(mail | message) down: key(f)
-unread [mail | message] up: key(p)
-unread [mail | message] down: key(n)
+(mail | message) (up | last): key(b)
+(mail | message) (down | next): key(f)
+unread [mail | message] (up | last): key(p)
+unread [mail | message] (down | next): key(n)
 go home: key(alt-home)
 toggle (mail | message) [pane]: key(f8)
 # mark
