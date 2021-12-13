@@ -14,9 +14,7 @@ ctx.tags = ["user.pages"]
 class UserActions:
     # user.pages
     def page_current(): return int(actions.user.browser_url_query().get("page", "1"))
-    def page_jump(number: int):
-        if number > 0:
-            actions.user.browser_set_url_query("page", number)
+    def page_jump(number: int): actions.user.browser_set_url_query("page", number)
 
 
 # Thread, forums, tags (subpath 3)
@@ -38,10 +36,9 @@ class UserActions:
         tokens = scope.get("browser.path").rstrip("/").split("/")
         return int(tokens[3].partition("-")[2]) if len(tokens) > 3 else 1
     def page_jump(number: int):
-        if number > 0:
-            tokens = scope.get("browser.path").rstrip("/").split("/")[:3]
-            tokens.append(f"page-{str(number)}")
-            actions.user.browser_go_path("/".join(tokens), keep_query=True)
+        tokens = scope.get("browser.path").rstrip("/").split("/")[:3]
+        tokens.append(f"page-{str(number)}")
+        actions.user.browser_go_path("/".join(tokens), keep_query=True)
     def page_final(): actions.user.page_jump(1000000)
 
 
@@ -63,10 +60,9 @@ class UserActions:
         tokens = scope.get("browser.path").rstrip("/").split("/")
         return int(tokens[4].partition("-")[2]) if len(tokens) > 4 else 1
     def page_jump(number: int):
-        if number > 0:
-            tokens = scope.get("browser.path").rstrip("/").split("/")[:4]
-            tokens.append(f"page-{str(number)}")
-            actions.user.browser_go_path("/".join(tokens), keep_query=True)
+        tokens = scope.get("browser.path").rstrip("/").split("/")[:4]
+        tokens.append(f"page-{str(number)}")
+        actions.user.browser_go_path("/".join(tokens), keep_query=True)
     def page_final(): actions.user.page_jump(1000000)
 
 
@@ -86,8 +82,7 @@ class UserActions:
         tokens = scope.get("browser.path").rstrip("/").split("/")
         return int(tokens[5].partition("-")[2]) if len(tokens) > 5 else 1
     def page_jump(number: int):
-        if number > 0:
-            tokens = scope.get("browser.path").rstrip("/").split("/")[:5]
-            tokens.append(f"page-{str(number)}")
-            actions.user.browser_go_path("/".join(tokens), keep_query=True)
+        tokens = scope.get("browser.path").rstrip("/").split("/")[:5]
+        tokens.append(f"page-{str(number)}")
+        actions.user.browser_go_path("/".join(tokens), keep_query=True)
     def page_final(): actions.user.page_jump(1000000)

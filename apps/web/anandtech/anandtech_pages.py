@@ -16,10 +16,9 @@ class UserActions:
         tokens = scope.get("browser.path").rstrip("/").split("/")
         return int(tokens[2]) if len(tokens) > 2 else 1
     def page_jump(number: int):
-        if number > 0:
-            tokens = scope.get("browser.path").rstrip("/").split("/")[:2]
-            tokens += ["Page", str(number)][(len(tokens) - 1):]
-            actions.user.browser_go_path("/".join(tokens), keep_query=True)
+        tokens = scope.get("browser.path").rstrip("/").split("/")[:2]
+        tokens += ["Page", str(number)][(len(tokens) - 1):]
+        actions.user.browser_go_path("/".join(tokens), keep_query=True)
 
 
 # Tag, author (subpath 3)
@@ -39,10 +38,9 @@ class UserActions:
         tokens = scope.get("browser.path").rstrip("/").split("/")
         return int(tokens[3]) if len(tokens) > 3 else 1
     def page_jump(number: int):
-        if number > 0:
-            tokens = scope.get("browser.path").rstrip("/").split("/")[:3]
-            tokens.append(str(number))
-            actions.user.browser_go_path("/".join(tokens), keep_query=True)
+        tokens = scope.get("browser.path").rstrip("/").split("/")[:3]
+        tokens.append(str(number))
+        actions.user.browser_go_path("/".join(tokens), keep_query=True)
 
 
 # Article (subpath 4)
@@ -61,7 +59,6 @@ class UserActions:
         tokens = scope.get("browser.path").rstrip("/").split("/")
         return int(tokens[4]) if len(tokens) > 4 else 1
     def page_jump(number: int):
-        if number > 0:
-            tokens = scope.get("browser.path").rstrip("/").split("/")[:4]
-            tokens.append(str(number))
-            actions.user.browser_go_path("/".join(tokens), keep_query=True)
+        tokens = scope.get("browser.path").rstrip("/").split("/")[:4]
+        tokens.append(str(number))
+        actions.user.browser_go_path("/".join(tokens), keep_query=True)
