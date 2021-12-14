@@ -122,6 +122,7 @@ class Actions:
 
     def file_manager_open_parent():
         """file_manager_open_parent"""
+        return
 
     def file_manager_go_forward():
         """file_manager_go_forward_directory"""
@@ -319,6 +320,10 @@ def gui_folders(gui: imgui.GUI):
 
     # if gui.button("Previous..."):
     #   actions.user.file_manager_previous_folder_page()
+
+    gui.spacer()
+    if gui.button("Manager close"):
+        actions.user.file_manager_hide_pickers()
 
 
 @imgui.open(y=10, x=1300)
