@@ -33,17 +33,17 @@ def on_phrase(j):
 @imgui.open(y=0)
 def gui(gui: imgui.GUI):
     global history
-    gui.text("Command History")
-    gui.line()
+    # gui.text("Command History")
+    # gui.line()
     text = (
         history[:] if hist_more else history[-setting_command_history_display.get() :]
     )
     for line in text:
         gui.text(line)
 
-    gui.spacer()
-    if gui.button("Command history close"):
-        actions.user.history_disable()
+    # gui.spacer()
+    # if gui.button("Command history close"):
+    #     actions.user.history_disable()
 
 
 speech_system.register("phrase", on_phrase)
