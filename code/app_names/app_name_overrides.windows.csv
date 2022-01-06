@@ -5,4 +5,5 @@ lock, slack.exe
 app, slack.exe
 lockapp, slack.exe
 terminal, cmd.exe
+terminal, WindowsTerminal.exe
 explorer, Windows-Explorer

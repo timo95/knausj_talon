@@ -4,19 +4,24 @@ app: stash
 stash help: key(?)
 
 # Navigation
-go stash scenes: key(g s)
-go stash images: key(g i)
-go stash movies: key(g v)
-go stash markers: key(g k)
-go stash galleries: key(g l)
-go stash performers: key(g p)
-go stash studios: key(g u)
-go stash tags: key(g t)
-go stash settings: key(g z)
+show scenes: key(g s)
+show images: key(g i)
+show movies: key(g v)
+show markers: key(g k)
+show galleries: key(g l)
+show performers: key(g p)
+show studios: key(g u)
+show tags: key(g t)
+show settings: key(g z)
 
 # Query Page
 # Scenes Page
 # Scene Page
+scene details: key(a)
+scene queue: key(q)
+scene markers: key(k)
+scene info: key(i)
+scene edit: key(e)
 # Scene Markers Tab
 # Edit Scene Tab
 # Movies Page

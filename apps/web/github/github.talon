@@ -4,8 +4,8 @@ app: github
 
 # site wide shortcuts
 focus search: key(s)
-go to notifications: insert("gn")
-go to dashboard: insert("gd")
+show notifications: insert("gn")
+show dashboard: insert("gd")
 (keyboard shortcuts show | show keyboard shortcuts): key(?)
 (selection move down | move selection down): key(j)
 (selection move up | move selection up): key(k)
@@ -13,13 +13,13 @@ go to dashboard: insert("gd")
 (selection open | open selection): key(o)
 
 # repositories
-go to code: insert("gc")
-go to issues: insert("gi")
-go to pull requests: insert("gp")
-go to wiki: insert("gw")
-go to actions: insert("ga")
-go to projects: insert("gb")
-go to discussions: insert("gg")
+show code: insert("gc")
+show issues: insert("gi")
+show pull requests: insert("gp")
+show wiki: insert("gw")
+show actions: insert("ga")
+show projects: insert("gb")
+show discussions: insert("gg")
 
 # source code editing
 [web] editor open: key(.)
@@ -64,6 +64,6 @@ assignee set: key(a)
 label set: key(l)
 
 # actions
-go to workflow: insert("gf")
+show workflow: insert("gf")
 timestamps toggle: key(shift-t)
 fullscreen toggle: key(shift-f)
