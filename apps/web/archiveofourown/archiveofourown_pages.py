@@ -5,7 +5,7 @@ from talon import Context, actions
 # /works/search
 # /bookmarks/search
 # /tags/search
-# /people/surge
+# /people/search
 # /collections
 # /users/<user>[/pseuds/<user>]/subscriptions
 # /users/<user>[/pseuds/<user>]/readings
