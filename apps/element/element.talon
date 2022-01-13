@@ -1,6 +1,7 @@
 app: element
 -
 tag(): user.messaging
+tag(): user.emoji
 
 # Spaces
 workspace <number_small>: key("ctrl-{number_small}")
