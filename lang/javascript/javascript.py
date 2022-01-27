@@ -51,6 +51,9 @@ class UserActions:
         actions.insert("{}")
         actions.key("left enter")
 
+    def code_comment_line_prefix():
+        actions.auto_insert('// ')
+
     def code_self():
         actions.auto_insert("this")
 

@@ -4,9 +4,12 @@ and tag: user.docker
 # Docker
 docker display: user.docker("ps ")
 docker display all: user.docker("ps -a ")
+docker run: user.docker("run ")
+docker stop: user.docker("stop ")
+docker remove: user.docker("rm ")
+docker force remove: user.docker("rm -f ")
 docker login: user.docker("login ")
 docker logout: user.docker("logout ")
-docker stop: user.docker("stop ")
 docker image push: user.docker("image push ")
 docker image pull: user.docker("image pull ")
 docker image lisa: user.docker("image ls ")

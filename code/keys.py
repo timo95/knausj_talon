@@ -1,6 +1,6 @@
 from talon import Module, Context, app
 
-default_alphabet = "alfa beat cap delta each fine gust harp sit jury crunch look made near oscar pit quebec red sun trap urge vest whale plex yank zip aegis earth uber asset".split(
+default_alphabet = "alfa beat cap delta each fine gust harp sit jury crunch look made near oscar pit quebec red sun trap urge vest whale plex yank zip aegis earth uber signage".split(
 #default_alphabet = "alfa bravo charlie delta echo foxtrot golf hotel india juliett kilo lima mike november oscar papa quebec romeo sierra tango uniform victor whisky xray yankee zulu aegis earth uber asset".split(
     " "
 )

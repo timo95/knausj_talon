@@ -5,6 +5,7 @@ tag(): user.emoji
 
 # Spaces
 workspace <number_small>: key("ctrl-{number_small}")
+
 # Insert format
 insert command:
     insert("``")
@@ -21,13 +22,17 @@ insert (quotation | citation):
 insert italic:
     insert("__")
     key(left)
+
 # Format selected word
 bold that: key(ctrl-b)
 (quote | cite) that: key(ctrl->)
 (italic | italicize) that: key(ctrl-i)
+
 # Calls
 ([toggle] mute | unmute): key(ctrl-d)
 [toggle] video: key(ctrl-e)
+
 # Miscellaneous
 show shortcuts: key(ctrl-/)
-toggle right sidebar: key(ctrl-.)
+toggle (right | info): key(ctrl-.)
+toggle (left | [work] spaces): key(ctrl-shift-d)

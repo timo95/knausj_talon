@@ -10,3 +10,4 @@ insert zip code: insert("04315")
 insert city: insert("Leipzig")
 insert address: insert("Schützenhausstr. 6\n04315 Leipzig")
 insert organization: insert("Universität Leipzig")
+insert regards: "Viele Grüße,"

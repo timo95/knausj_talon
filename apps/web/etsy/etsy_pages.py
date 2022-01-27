@@ -3,6 +3,7 @@ from talon import Context, actions
 # Search, category, shop, listing, people (query "page")
 # [/<language>]/search(/<category>)*
 # [/<language>]/c(/<category>)+
+# [/<language>]/market/<product>
 # [/<language>]/shop/<shop>
 # [/<language>]/shop/<shop>/sold
 # [/<language>]/shop/<shop>/favoriters
@@ -14,6 +15,7 @@ ctx.matches = r"""
 app: etsy
 browser.path: /^(\/\w+)?\/search(\/[-\w]+)*\/?$/
 browser.path: /^(\/\w+)?\/c(\/[-\w]+)+\/?$/
+browser.path: /^(\/\w+)?\/market\/[^\/]+\/?$/
 browser.path: /^(\/\w+)?\/shop\/[^\/]+(|\/sold|\/favoriters)\/?$/
 browser.path: /^(\/\w+)?\/listing\/\d+\/[-\w]+\/favoriters\/?$/
 browser.path: /^(\/\w+)?\/people\/[^\/]+\/(favorites\/recent-listings|circle)\/?$/
