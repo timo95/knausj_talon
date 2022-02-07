@@ -35,6 +35,7 @@ extension_lang_map = {
     ".tex": "latex",
     ".ts": "typescript",
     ".tsx": "typescript",
+    ".tf": "terraform",
     ".vba": "vba",
     ".vim": "vimscript",
     ".vimrc": "vimscript",
