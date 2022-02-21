@@ -3,9 +3,7 @@ from talon import Context, Module, actions, settings
 ctx = Context()
 mod = Module()
 ctx.matches = r"""
-mode: user.java
-mode: user.auto_lang
-and code.language: java
+tag: user.java
 """
 
 # Primitive Types
