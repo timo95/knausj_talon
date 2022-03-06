@@ -106,6 +106,31 @@ class UserActions:
         actions.user.browser_go_path("/".join(tokens), keep_query=True)
 
 
+# Community story browser (subpath 6)
+# /community/<community>/<number_community>/[<number_rating>/<number_sort>/<page>/<number_type>/<number_genre>/<number_words>/<number_status>/<number_update_time>]
+ctx = Context()
+ctx.matches = r"""
+app: fanfictionnet
+app: fictionpress
+browser.path: /^\/community\/[^\/]+\/\d+\/(\d+\/){0,6}(\d+\/?)?$/
+"""
+ctx.tags = ["user.pages"]
+
+@ctx.action_class("user")
+class UserActions:
+    # user.pages
+    def page_current():
+        tokens = scope.get("browser.path").rstrip("/").split("/")
+        return int(tokens[6]) if len(tokens) > 6 else 1
+    def page_jump(number: int):
+        tokens = scope.get("browser.path").rstrip("/").split("/")
+        if len(tokens) > 6:
+            tokens[6] = str(number)
+        else:
+            tokens += ["3", "0", str(number), "0", "0", "0", "0", ""][(len(tokens) - 4):]
+        actions.user.browser_go_path("/".join(tokens), keep_query=True)
+
+
 # Forum browser (subpath 7)
 # /forums/<category>/<fandom>/[<number_lang>/<number_sort>/<number_type>/<page>]
 ctx = Context()
