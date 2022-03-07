@@ -1,7 +1,8 @@
-from talon import Module, Context, app
+from talon import Module, Context, actions, app
 
 default_alphabet = "arch beat cap delta each fine gust harp sit jury crunch look made near oscar pit quebec red sun trap urge vest whale plex yank zip aegis earth uber signage".split(
-#default_alphabet = "alfa bravo charlie delta echo foxtrot golf hotel india juliett kilo lima mike november oscar papa quebec romeo sierra tango uniform victor whisky xray yankee zulu aegis earth uber asset".split(
+# default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
+# default_alphabet = "alfa bravo charlie delta echo foxtrot golf hotel india juliett kilo lima mike november oscar papa quebec romeo sierra tango uniform victor whisky xray yankee zulu aegis earth uber asset".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyzäöüß"
@@ -79,7 +80,7 @@ def any_alphanumeric_key(m) -> str:
 
 @mod.capture(
     rule="( <self.letter> | <self.number_key> | <self.symbol_key> "
-    "| <self.arrow_key> | <self.function_key> | <self.special_key> )"
+         "| <self.arrow_key> | <self.function_key> | <self.special_key> )"
 )
 def unmodified_key(m) -> str:
     "A single key with no modifiers"
@@ -112,11 +113,11 @@ ctx = Context()
 modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
     "alter": "alt",
-    "control": "ctrl",  #'troll':   'ctrl',
-    "shift": "shift",  #'sky':     'shift',
+    "control": "ctrl",  # 'troll':   'ctrl',
+    "shift": "shift",  # 'sky':     'shift',
     "super": "super",
 }
-if app.platform  == "mac":
+if app.platform == "mac":
     modifier_keys["command"] = "cmd"
     modifier_keys["option"] = "alt"
 ctx.lists["self.modifier_key"] = modifier_keys
@@ -126,10 +127,6 @@ ctx.lists["self.letter"] = alphabet
 # `punctuation_words` is for words you want available BOTH in dictation and as key names in command mode.
 # `symbol_key_words` is for key names that should be available in command mode, but NOT during dictation.
 punctuation_words = {
-    # TODO: I'm not sure why we need these, I think it has something to do with
-    # Dragon. Possibly it has been fixed by later improvements to talon? -rntz
-    "`": "`",
-    ",": ",",  # <== these things
     "back tick": "`",
     "grave": "`",
     "comma": ",",
@@ -152,7 +149,7 @@ punctuation_words = {
     # Currencies
     "dollar sign": "$",
     "pound sign": "£",
-    "euro": "€",
+    "euro sign": "€",
 }
 symbol_key_words = {
     "dot": ".",
@@ -219,26 +216,26 @@ ctx.lists["self.arrow_key"] = {
 }
 
 simple_keys = [
-    #"end",
+    # "end",
     "enter",
     "escape",
-    #"home",
+    # "home",
     "insert",
     "pagedown",
     "pageup",
     "space",
-    #"tab",
-	"delete",
-	"backspace",
+    # "tab",
+    "delete",
+    "backspace",
 ]
 
 alternate_keys = {
-    #"delete": "backspace",
-    #"forward delete": "delete",
-    #'junk': 'backspace',
+    # "delete": "backspace",
+    # "forward delete": "delete",
+    # 'junk': 'backspace',
     "page up": "pageup",
     "page down": "pagedown",
-	"start": "super",
+    "start": "super",
     "head": "home",
     "tail": "end",
     "tabber": "tab",
@@ -261,7 +258,7 @@ class Actions:
     def move_cursor(s: str):
         """Given a sequence of directions, eg. 'left left up', moves the cursor accordingly using edit.{left,right,up,down}."""
         for d in s.split():
-            if d in ('left','right','up','down'):
+            if d in ('left', 'right', 'up', 'down'):
                 getattr(actions.edit, d)()
             else:
                 raise RuntimeError(f'invalid arrow key: {d}')
