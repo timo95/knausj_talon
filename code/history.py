@@ -82,6 +82,14 @@ class Actions:
         num = (0 - number) - 1
         return history[num]
 
+    def history_set(number: int, value: str):
+        """sets the history entry at the specified index"""
+        num = (0 - number) - 1
+        if value is None:
+            history.pop(num)
+        else:
+            history[num] = value
+
     def history_transform_phrase_text(words: list[str]) -> Optional[str]:
         """Transforms phrase text for presentation in history. Return `None` to omit from history"""
 
