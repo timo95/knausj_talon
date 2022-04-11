@@ -9,7 +9,7 @@
 #word no: "NULL"
 #word cmd: "cmd"
 #word dup: "dup"
-#word shell: "shell"
+#word shell: "shell".
 zoom in: edit.zoom_in()
 zoom out: edit.zoom_out()
 zoom reset: edit.zoom_reset()
@@ -22,9 +22,8 @@ undo that: edit.undo()
 redo that: edit.redo()
 paste match: edit.paste_match_style()
 file save: edit.save()
-wipe: key(backspace)    
+wipe: key(backspace)
 padding:
-	insert("  ") 
+	insert("  ")
 	key(left)
 slap: edit.line_insert_down()
-

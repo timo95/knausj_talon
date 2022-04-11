@@ -21,11 +21,11 @@ ctx.matches = r"""
 app: firefox
 """
 
-
 @ctx.action_class('browser')
 class BrowserActions:
     # TODO
-    # action(browser.title):
+    #action(browser.address):
+    #action(browser.title):
     def go(url: str):
         actions.browser.focus_address()
         actions.sleep("100ms")

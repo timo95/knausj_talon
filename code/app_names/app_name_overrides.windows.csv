@@ -1,4 +1,4 @@
-grip, DataGrip 
+grip, DataGrip
 term, iTerm2
 one note, ONENOTE
 lock, slack.exe
@@ -7,3 +7,5 @@ lockapp, slack.exe
 terminal, cmd.exe
 terminal, WindowsTerminal.exe
 explorer, Windows-Explorer
+pycharm, pycharm64.exe
+webstorm, webstorm64.exe

@@ -19,4 +19,3 @@ mode: all
 ^talon wake$:
     user.history_enable()
     speech.enable()
-
