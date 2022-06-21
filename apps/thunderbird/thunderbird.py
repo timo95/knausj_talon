@@ -33,21 +33,21 @@ title: Kalender - Mozilla Thunderbird
 title: /({"|".join(map(lambda m: m + " ", months))})/
 """
 
-# Tasks tab TODO: implement commands
+# Tasks tab
 mod.apps.thunderbird_tasks = """
 app: thunderbird
 title: Tasks - Mozilla Thunderbird
 title: Aufgaben - Mozilla Thunderbird
 """
 
-# Mail composer window TODO: implement commands
+# Mail composer window
 mod.apps.thunderbird_composer = """
 app: thunderbird
 title: /Write: /
 title: /Verfassen: /
 """
 
-# Address book window
+# Address book popup window
 mod.apps.thunderbird_contacts = """
 app: thunderbird
 title: Address Book
@@ -66,6 +66,7 @@ app: thunderbird
 class UserActions:
     def mod():
         """ctrl or cmd"""
+
     def thunderbird_calendar_view(number: int):
         """Select between calendar view tabs"""
 

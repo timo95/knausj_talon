@@ -1,7 +1,7 @@
 import os
+from pathlib import Path
 
 from talon import Context, Module, actions, app, ui, clip
-from pathlib import Path
 
 mod = Module()
 apps = mod.apps

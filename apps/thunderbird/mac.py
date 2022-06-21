@@ -7,10 +7,11 @@ os: mac
 app: thunderbird
 """
 
-# TODO: test commands
+
 # --- Implement actions ---
 @ctx.action_class('app')
 class AppActions:
+    # app.tabs
     def tab_reopen(): actions.key("cmd-shift-t")  # only works from inbox tab
 
 
@@ -20,7 +21,10 @@ class UserActions:
     def tab_jump(number: int):
         if number <= 9:
             actions.key(f"cmd-{number}")
+
     def tab_final(): actions.key("cmd-9")
+
     # custom actions
     def mod(): return "cmd"
+
     def thunderbird_calendar_view(number: int): actions.key(f"alt-{number}")
