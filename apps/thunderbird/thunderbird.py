@@ -1,4 +1,4 @@
-from talon import Module, Context
+from talon import Context, Module
 
 # --- App definitions ---
 # Main app TODO: mac context
@@ -22,9 +22,26 @@ title: /@/
 
 # Calendar tab (lightning)
 months = [
-    "January", "February", "March", "April", "May", "June",  # English
-    "July", "August", "September", "October", "November", "December",
-    "Januar", "Februar", "März", "Mai", "Juni", "Juli", "Oktober", "Dezember",  # German
+    "January",  # English
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+    "Januar",  # German
+    "Februar",
+    "März",
+    "Mai",
+    "Juni",
+    "Juli",
+    "Oktober",
+    "Dezember",
 ]
 mod.apps.thunderbird_calendar = f"""
 app: thunderbird
@@ -64,16 +81,17 @@ app: thunderbird
 # --- Define actions ---
 @mod.action_class
 class UserActions:
-    def mod():
-        """ctrl or cmd"""
+    def thunderbird_mod(keys: str):
+        """Press keys with modifier ctrl or cmd"""
 
     def thunderbird_calendar_view(number: int):
         """Select between calendar view tabs"""
 
 
 # --- Implement actions ---
-@ctx.action_class('app')
+@ctx.action_class("app")
 class AppActions:
     # app.tabs
     # not possible in thunderbird
-    def tab_open(): pass
+    def tab_open():
+        pass
