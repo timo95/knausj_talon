@@ -16,4 +16,4 @@ class UserActions:
     def docker(command: str = ""):
         actions.insert("docker " + command)
     def docker_compose(command: str = ""):
-        actions.insert("docker-compose " + command)
+        actions.insert("docker compose " + command)
