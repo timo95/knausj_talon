@@ -35,4 +35,6 @@ settings():
     user.history_enable()
     user.talon_mode()
 
-^(talon wake)+$: speech.enable()
+^(talon wake)+$:
+    user.history_enable()
+    speech.enable()
