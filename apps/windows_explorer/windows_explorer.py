@@ -123,7 +123,7 @@ class UserActions:
         # Fallback if option not set: "Display the full path in the title bar"
         # Not used in file_manager_current_path(), because it runs on every focus/title change
         if not is_valid_path and path != "":
-            actions.key("ctrl-l backspace escape")  # In some cases the selection has to be cleared first
+            actions.key("ctrl-l")
             with clip.capture() as capture:
                 actions.edit.copy()
             actions.key("escape")
