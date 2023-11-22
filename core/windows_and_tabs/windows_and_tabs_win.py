@@ -34,27 +34,7 @@ class AppActions:
         actions.key("alt-space n")
 
     def window_hide_others():
-        actions.key("super-home")
-        # requires easy window switcher or equivalent (built into most Linux)
-
-    def window_next():
-        actions.key("alt-^")
+        actions.key("win-d alt-tab")
 
     def window_open():
         actions.key("ctrl-n")
-        # requires easy window switcher or equivalent (built into most Linux)
-
-    def window_previous():
-        actions.key("alt-shift-^")
-
-
-@ctx.action_class("user")
-class UserActions:
-    def window_maximize():
-        actions.key("super-up")
-    def window_restore():
-        actions.key("super-up super-down")
-    def window_menu():
-        actions.key("alt-space")
-    def window_overview():
-        actions.key("super-tab")
